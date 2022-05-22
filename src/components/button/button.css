@@ -1,0 +1,17 @@
+.button {
+    background-color: var(--other-color);
+    color: var(--primary-color);
+    text-align: center;
+    border-radius: var(--border-primary);
+    transition: box-shadow .2s;
+}
+
+.button>a {
+    color: rgb(41, 40, 40);
+    display: block;
+    padding: 10px 20px;
+}
+.button:hover {
+    box-shadow: 2px 2px 8px -4px rgb(36, 75, 80);
+    transition: box-shadow .2s;
+}

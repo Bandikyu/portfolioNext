@@ -1,0 +1,61 @@
+.header {
+    position:absolute;
+    /* z-index: 2; */
+    top: 0;
+    right: 0;
+    width: 50%;
+    padding: 15px 0;
+    font-size: 1.4rem;
+    border-radius: 0 0 0 var(--border-primary);
+    background-color: var(--secondary-color);
+    transition-duration: var(--time-transition);
+    transition-property: all;
+    transition-timing-function: linear;
+    /* transition-property: padding, width, top,right,gap; */
+
+}
+
+.nav {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0 30px;
+}
+
+/* .nav> * {
+    background-color: var(--other-color);
+    color: var(--primary-color);
+    text-align: center;
+    border-radius: var(--border-primary);
+    transition: box-shadow .2s;
+
+}
+.nav>*>* {
+    color: rgb(41, 40, 40);
+    display: block;
+    padding: 10px 20px;
+
+}
+.nav>*:hover {
+    box-shadow: 2px 2px 8px -4px rgb(36, 75, 80);
+    transition: box-shadow .2s;
+} */
+
+/* Al scrollear */
+.header-srll {
+    position: fixed;
+    font-size: 1rem;
+    width: 200px;
+    border-radius: var(--border-primary);
+    padding: 0;
+    right: 10px;
+    top:33%;
+}
+
+.nav-srll {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}

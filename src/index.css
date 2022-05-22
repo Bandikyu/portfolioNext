@@ -1,0 +1,29 @@
+/* CARACTERISTICAS GENERALES */
+body {
+  height: 200vh;
+  /* border: 1px solid red; */
+}
+* {
+    font-family: "Century Gothic", Futura, sans-serif;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  /* VARIABLES */
+  :root {
+    /* tiempo */
+    --time-transition: 0.1s;
+
+    /* colores */
+    --primary-color: hsl(232, 43%, 36%);
+    --primary-color-Opac: hsl(232, 43%, 25%);
+    --primary-color-Lum: hsl(232, 43%, 60%);
+    --secondary-color: hsl(16, 59%, 60%);
+    --other-color: hsl(0, 0%, 92%);
+    --background-gradient: linear-gradient(0deg , var(--secondary-color) , var(--primary-color-Opac));
+
+    /* bordes */
+    --border-primary: 10px;
+  }

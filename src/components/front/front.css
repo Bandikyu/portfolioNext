@@ -1,0 +1,38 @@
+.front {
+    padding-top: 4%;
+    padding-left: 4%;
+
+    height: 50vh;
+    background-image: var(--background-gradient);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: auto 60vh;
+    border-bottom-right-radius: 200px 100px;
+    border-bottom-left-radius: 200px 100px;
+    position: relative;
+
+}
+
+
+.front>div {
+    width: 50%;
+}
+
+
+.front h1 {
+    font-size: 4rem;
+    word-wrap: break-word;
+    background-image: var(--background-gradient);
+    background-clip: text;
+    background-attachment: scroll;
+    background-size: auto 2em;
+    background-repeat: no-repeat;
+    background-position-y: -.8em;
+    color: transparent;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.front p {
+    color: rgb(233, 233, 233);
+    font-size: 1.3rem;
+}
