@@ -12,6 +12,7 @@ function Front() {
                     puede ser usado comúnmente para añadir detalles a la 
                     interfaz y mejorar su experiencia de usuario.</p>
                 </div>
+                
             </section>
         )
     

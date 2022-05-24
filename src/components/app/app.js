@@ -12,8 +12,15 @@ class App extends React.Component {
         super(props);
         this.throttle = this.throttle.bind(this);
         this.coordY = this.coordY.bind(this);
-        this.state = {scroll: window.scrollY , throttleTimer: false};
+        this.state = {
+          scroll: window.scrollY , 
+          throttleTimer: false,
+          loaded: false
+        };
     }
+/*     componentDidMount = () => {
+      this.setState({loaded: true});
+    } */
     coordY() {
       if(this.state.throttleTimer === true) {
         return this.setState({scroll: window.scrollY}) 
@@ -33,6 +40,7 @@ class App extends React.Component {
 
     render() {
         window.addEventListener('scroll' , ()=>this.throttle(this.coordY , 300));
+        //console.log(this.state)
         
         return (
           <div className='Princial'>
