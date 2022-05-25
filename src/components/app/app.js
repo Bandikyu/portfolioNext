@@ -13,34 +13,39 @@ class App extends React.Component {
         this.throttle = this.throttle.bind(this);
         this.coordY = this.coordY.bind(this);
         this.state = {
-          scroll: window.scrollY , 
-          throttleTimer: false,
+          scroll: window.scrollY 
+          //throttleTimer: false,
           //loaded: false
         };
+        this.throttleTimer = false;
+
     }
 /*     componentDidMount = () => {
       this.setState({loaded: true});
     } */
     coordY() {
-      if(this.state.throttleTimer === true) {
+      //if(this.state.throttleTimer === true) {
+      if(this.throttleTimer === true) {
         return this.setState({scroll: window.scrollY}) 
       }else return;
     };
-    
     throttle (callback, time) {
-      if (this.state.throttleTimer) return;
+      if (this.throttleTimer) return;
+      //if (this.state.throttleTimer) return;
       
-      this.setState({throttleTimer: true})
+      this.throttleTimer = true;
+      //this.setState({throttleTimer: true})
       
       setTimeout(() => {
           callback();
-          this.setState({throttleTimer: false});
+          this.throttleTimer = false;
+          //this.setState({throttleTimer: false});
       }, time);
     }
 
     render() {
         window.addEventListener('scroll' , ()=>this.throttle(this.coordY , 300));
-        //console.log(this.state)
+        //console.log(this.throttleTimer)
         
         return (
           <div className='Princial'>
