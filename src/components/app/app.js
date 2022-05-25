@@ -15,7 +15,7 @@ class App extends React.Component {
         this.state = {
           scroll: window.scrollY , 
           throttleTimer: false,
-          loaded: false
+          //loaded: false
         };
     }
 /*     componentDidMount = () => {

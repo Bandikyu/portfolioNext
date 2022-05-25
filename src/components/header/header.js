@@ -7,17 +7,17 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     //this.componentDidMount = this.componentDidMount.bind(this);
-    this.state = {
+/*     this.state = {
       headerSize: this.componentDidMount
-    }
+    } */
   }
   //queriendo pasar el tamaño del componente despues de ser inicializado en el arbol  a un estado y en base a esto poder 
   //enviarlo como valor a la clase en lugar de los 200
-  componentDidMount() {
+/*   componentDidMount() {
     let header = document.getElementById('header');
     //let headerSize = header.clientHeight
     return header.clientHeight;
-  }
+  } */
   
   render() {      
       console.log(this.props.scroll);
