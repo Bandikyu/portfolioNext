@@ -20,7 +20,6 @@ class Header extends React.Component {
   } */
   
   render() {      
-      console.log(this.props.scroll);
       return (
         <div id='header' className={this.props.scroll>=200 ? 'header header-srll' : 'header'}>
           <Nav name={this.props.scroll>=200 ? 'nav nav-srll' : 'nav'}/>
