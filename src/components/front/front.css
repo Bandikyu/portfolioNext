@@ -10,7 +10,7 @@
     border-bottom-right-radius: 200px 100px;
     border-bottom-left-radius: 200px 100px;
     position: relative;
-
+    transition: border-radius .5s;
 }
 
 

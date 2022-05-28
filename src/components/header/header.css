@@ -3,13 +3,14 @@
     top: 0;
     right: 0;
     padding: 15px 0;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     border-radius: 0 0 0 var(--border-primary);
     background-color: transparent;
     transition-duration: var(--time-transition);
     transition-property: all;
     transition-timing-function: linear;
     /* transition-property: padding, width, top,right,gap; */
+    z-index: 2;
 
 }
 

@@ -1,17 +1,43 @@
 .button {
     background-color: var(--other-color);
+    background-color: transparent;
     color: var(--primary-color);
     text-align: center;
     border-radius: var(--border-primary);
     transition: box-shadow .2s;
 }
+.button>div {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
 
-.button>a {
+.button>div>a {
     color: rgb(41, 40, 40);
+    color: rgb(255, 255, 255);
     display: block;
     padding: 10px 20px;
+    z-index: 1;
+    position: relative;
 }
-.button:hover {
-    box-shadow: 2px 2px 8px -4px rgb(36, 75, 80);
-    transition: box-shadow .2s;
+
+.button>div::before {
+    display: block;
+    border-radius: var(--border-primary);
+    content: "";
+    position: absolute;
+    background-color: var(--other-color);
+    height: 100%;
+    width: 0;
+    transition: .2s;
+}
+.button:hover div::before {
+    width: 100%;
+}
+.button:hover div>a{
+    color: hsl(0, 4%, 10%);
+    transition: .4s;
+}
+.button:active div::before {
+    box-shadow: inset 2px 2px 8px -4px rgb(59, 59, 59);
 }

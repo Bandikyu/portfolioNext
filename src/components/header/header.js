@@ -6,27 +6,34 @@ import Button from '../button/button'
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    //this.componentDidMount = this.componentDidMount.bind(this);
-/*     this.state = {
-      headerSize: this.componentDidMount
-    } */
+    //ARREGLOS: tengo que buscar una manera de que cuando F5 a la pagina, this.headerSize no vuelva a cambiar
+    //porque el scroll se mantiene, entonces los size de algunos elementos cambia.
+    //solucion torpe: que cada vez que actualice la pagina vuelva al top 🐜
+    this.headerSize = 20;
+    this.handleClick = this.handleClick.bind(this);
   }
-  //queriendo pasar el tamaño del componente despues de ser inicializado en el arbol  a un estado y en base a esto poder 
-  //enviarlo como valor a la clase en lugar de los 200
-/*   componentDidMount() {
+  componentDidMount() {
     let header = document.getElementById('header');
-    //let headerSize = header.clientHeight
-    return header.clientHeight;
+    this.headerSize = header.clientHeight;
+    //console.log(this.headerSize); //🐜  
+  }
+/*   componentWillUnmount() {
+    this.headerSize = 100;
+    console.log(this.headerSize); //🐜  
   } */
-  
-  render() {      
+
+  handleClick(e) {
+    console.log(e.target);
+  }
+  render() {    
       return (
-        <div id='header' className={this.props.scroll>=200 ? 'header header-srll' : 'header'}>
-          <Nav name={this.props.scroll>=200 ? 'nav nav-srll' : 'nav'}/>
+        <div id='header' className={this.props.scroll>=this.headerSize ? 'header header-srll' : 'header'}>
+          <Nav name={this.props.scroll>=this.headerSize ? 'nav nav-srll' : 'nav'}/>
         </div>
       );
     }
 }
+
 function Nav(props) {
     return (
     <ul className={props.name}>
@@ -34,13 +41,13 @@ function Nav(props) {
         <Button href='https://sass-lang.com/guide' className='button' text='Inicio'/>
       </li>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Blogs'/>
-      </li>
-      <li>
         <Button href='https://sass-lang.com/guide' className='button' text='Contact'/>
       </li>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Proyectos e Ideas'/>
+        <Button href='https://sass-lang.com/guide' className='button' text='Blogs'/>
+      </li>
+      <li>
+        <Button href='https://sass-lang.com/guide' className='button' text='Code Lab'/>
       </li>
     </ul>
     );
