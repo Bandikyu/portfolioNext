@@ -1,0 +1,18 @@
+.diagram {
+    border: 1px solid blue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+
+}
+.diagram>* {
+    border: 1px solid blue;
+}
+.diagram img {
+    position: absolute;
+    height: 100%;
+    display: block;
+
+}
