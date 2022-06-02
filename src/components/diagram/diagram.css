@@ -1,18 +1,75 @@
-.diagram {
-    border: 1px solid blue;
-    position: relative;
-    display: flex;
+.diagrams-container {
+    display: grid;
+    grid-template-columns: repeat(4 , minmax(240px , 1fr));
+    grid-auto-flow: dense;
+    justify-items: center;
     align-items: center;
-    justify-content: center;
-    width: 30%;
+    gap: 25px;
+    height: 50vh;
 
 }
-.diagram>* {
-    border: 1px solid blue;
+
+.diagram {
+    border: 5px solid var(--other-color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 30%; */
+    height: 200px;
+    overflow: hidden;
+    width: 255px;
+}
+.diagram h3 {
+    background-color: var(--other-color);
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    transition:left .2s linear;
+
+}
+.diagram ul {
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.diagram ul::-webkit-scrollbar {
+    width: 0;
+}
+
+.diagram ul li {
+    padding: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: transparent;
+    background-color: transparent;
+    transition: .2s;
 }
 .diagram img {
     position: absolute;
+    bottom: 0;
     height: 100%;
     display: block;
+    transition: bottom .2s linear;
+}
+.diagram:hover h3 {
+/*     color: transparent;
+    background-color: transparent; */
+    left: -100%;
+}
 
+.diagram:hover ul li {
+    background-color: var(--other-color);
+    color: black;
+}
+
+.diagram:hover img{
+    bottom: -100%
 }

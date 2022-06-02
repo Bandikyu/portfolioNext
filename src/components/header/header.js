@@ -23,7 +23,7 @@ class Header extends React.Component {
   } */
 
   handleClick(e) {
-    console.log(e.target);
+    //console.log(e.target);
   }
   render() {    
       return (
