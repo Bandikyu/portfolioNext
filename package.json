@@ -1,6 +1,6 @@
 {
-  "homepage": "https://bandikyu.github.io/porfolio",
-  "name": "my-app",
+  "homepage": "https://bandikyu.github.io/porfolioNext",
+  "name": "next-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
