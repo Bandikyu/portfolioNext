@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../button/button';
+//import Button from '../button/button';
 import Diagram from '../diagram/diagram';
 import './content.css';
 

@@ -15,7 +15,7 @@ class DiagramJ extends React.Component {
         this.state = {
             jsonDetails : [],
             completeDetailList: [<li>Cargando...</li>]
-        }
+        };
         this.props.title;
         //this.cosa;
     }
@@ -63,7 +63,7 @@ function Diagram() {
                 <li key={titleDiagrams[diagram]} className='diagram'>
                     <h3>{titleDiagrams[diagram]}</h3>
                     <DiagramJ title={titleDiagrams[diagram]}/>
-                    <img src={imgs[titleDiagrams[diagram]]}/> 
+                    <img alt='' src={imgs[titleDiagrams[diagram]]}/> 
                 </li>
             )
         }
