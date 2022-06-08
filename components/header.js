@@ -1,6 +1,7 @@
 import React from 'react';
-import './header.css';
-import Button from '../button/button'
+import styles from '../styles/Header.module.css';
+import Button from './button'
+
 
 
 class Header extends React.Component {
@@ -27,8 +28,8 @@ class Header extends React.Component {
   }
   render() {    
       return (
-        <div id='header' className={this.props.scroll>=this.headerSize ? 'header header-srll' : 'header'}>
-          <Nav name={this.props.scroll>=this.headerSize ? 'nav nav-srll' : 'nav'}/>
+        <div id='header' className={this.props.scroll>=this.headerSize ? styles.header_srll : styles.header}>
+          <Nav name={this.props.scroll>=this.headerSize ? styles.nav_srll : styles.nav}/>
         </div>
       );
     }

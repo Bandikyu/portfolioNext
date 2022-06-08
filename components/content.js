@@ -1,7 +1,7 @@
 import React from 'react';
 //import Button from '../button/button';
-import Diagram from '../diagram/diagram';
-import './content.css';
+import Diagram from './diagram';
+import styles from '../styles/Content.module.css';
 
 //function Content(props) 
 class Content extends React.Component{
@@ -13,7 +13,7 @@ class Content extends React.Component{
         //console.log('Content: me re-renderizan loco'); //🥐
         
         return (
-            <div className='content'> 
+            <div className={styles.content}> 
                 <h2>Algunas de las tecnologias con las que trabajo</h2>
                 <Diagram/>
             </div>

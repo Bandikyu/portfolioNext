@@ -1,5 +1,5 @@
 import React from 'react';
-import './front.css';
+import styles from '../styles/Front.module.css';
 
 function Front(props) {
     return (
@@ -8,7 +8,7 @@ function Front(props) {
             borderBottomLeftRadius: `${200/(props.border+1)}px ${100/(props.border+1)}px` ,
             borderBottomRightRadius: `${200/(props.border+1)}px ${100/(props.border+1)}px`
         } : {border: ''}}
-        className='front'>
+        className={styles.front}>
             <div>
                 {/* Aca quiero que el titulo cambie segun la "pagina" en la que este, "Blog", "Contact"... */}
                 <h1>Hola soy Bruno, un gusto</h1>

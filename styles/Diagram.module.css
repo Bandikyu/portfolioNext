@@ -1,4 +1,4 @@
-.diagrams-container {
+.diagramsContainer {
     display: grid;
     grid-template-columns: repeat(4 , minmax(240px , 1fr));
     grid-auto-flow: dense;

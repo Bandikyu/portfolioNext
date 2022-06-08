@@ -24,7 +24,7 @@
 }
 
 /* Al scrollear */
-.header-srll {
+.header_srll {
     position: fixed;
     right: 10px;
     top:33%;
@@ -35,7 +35,7 @@
     background-color: var(--secondary-color);
 }
 
-.nav-srll {
+.nav_srll {
     flex-direction: column;
     gap: 10px;
     padding: 10px;

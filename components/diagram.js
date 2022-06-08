@@ -1,7 +1,7 @@
 import React from 'react';
-import './diagram.css'
-import {imgs} from '../../img/img';
-import sheetDetails from '../../server/get';
+import styles from '../styles/Diagram.module.css'
+import {imgs} from '../public/img/img';
+import sheetDetails from '../src/server/get';
 
 /* let jsonDetails;
 sheetDetails
@@ -15,9 +15,8 @@ class DiagramJ extends React.Component {
         this.state = {
             jsonDetails : [],
             completeDetailList: [<li>Cargando...</li>]
-        };
-        this.props.title;
-        //this.cosa;
+        }
+        //this.props.title;
     }
     componentDidMount() {
         sheetDetails
@@ -60,7 +59,7 @@ function Diagram() {
         let completDiagrams = [];
         for(let diagram in titleDiagrams) {
             completDiagrams.push(
-                <li key={titleDiagrams[diagram]} className='diagram'>
+                <li key={titleDiagrams[diagram]} className={styles.diagram}>
                     <h3>{titleDiagrams[diagram]}</h3>
                     <DiagramJ title={titleDiagrams[diagram]}/>
                     <img alt='' src={imgs[titleDiagrams[diagram]]}/> 
@@ -71,7 +70,7 @@ function Diagram() {
     }
     
     return (
-        <ul className='diagrams-container'>
+        <ul className={styles.diagramsContainer}>
             {diagrams()}
         </ul>
     )

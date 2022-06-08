@@ -1,8 +1,10 @@
 import React from 'react';
-import '../../index.css';
-import Content from '../content/content';
-import Front from '../front/front';
-import Header from '../header/header';
+// import '../styles/index.css';
+import Content from '../components/content';
+import Front from '../components/front';
+import Header from '../components/header';
+
+
 
 class App extends React.Component {
     constructor(props) {
@@ -11,7 +13,7 @@ class App extends React.Component {
         this.coordY = this.coordY.bind(this);
         //this.componentWillUnmount = this.componentWillUnmount.bind(this);
         this.state = {
-          scroll: window.scrollY 
+          //scroll: window.scrollY //esto podria generarlo en pre render static
         };
         this.throttleTimer = false;
     }
