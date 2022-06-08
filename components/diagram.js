@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/Diagram.module.css'
 import {imgs} from '../public/img/img';
 import sheetDetails from '../src/server/get';
+import Image from 'next/image';
 
 /* let jsonDetails;
 sheetDetails
@@ -62,7 +63,10 @@ function Diagram() {
                 <li key={titleDiagrams[diagram]} className={styles.diagram}>
                     <h3>{titleDiagrams[diagram]}</h3>
                     <DiagramJ title={titleDiagrams[diagram]}/>
-                    <img alt='' src={imgs[titleDiagrams[diagram]]}/> 
+                    {/* <img alt='' src={imgs[titleDiagrams[diagram]]}/>  */}
+                    <div className={styles.imge}>
+                        <Image /*className={styles.imge}*/ alt='' src={imgs[titleDiagrams[diagram]]} layout='fill'/>
+                    </div> 
                 </li>
             )
         }

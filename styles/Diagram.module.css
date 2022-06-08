@@ -10,7 +10,8 @@
 }
 
 .diagram {
-    border: 5px solid var(--other-color);
+    border-left: 5px solid var(--other-color);
+    border-right: 5px solid var(--other-color);
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -52,17 +53,22 @@
     background-color: transparent;
     transition: .2s;
 }
-.diagram img {
+.imge {
     position: absolute;
     bottom: 0;
     height: 100%;
     display: block;
     transition: bottom .2s linear;
+    /* border: 3px solid red; */
+    width: 90%;
 }
 .diagram:hover h3 {
 /*     color: transparent;
     background-color: transparent; */
     left: -100%;
+}
+.diagram:hover ul {
+    width: 100%;
 }
 
 .diagram:hover ul li {
@@ -70,6 +76,6 @@
     color: black;
 }
 
-.diagram:hover img{
+.diagram:hover .imge{
     bottom: -100%
 }
