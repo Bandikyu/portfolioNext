@@ -17,17 +17,18 @@ import Link from 'next/link';
   }
 } */
 export async function getStaticProps() {
-  let response = await posts();
+  let response = await posts('5f28676954394485a6db3de0b592a862');
+  // console.log(response);
   return {
     props: {
-      posts: response,
+      posts: response.resChildrens,
     }
   };
 }
 
 function Pru(props) {
   let titulos = [];
-  props.posts.results.forEach(e => {
+ props.posts.results.forEach(e => {
     titulos.push(
       <Link key={e.id} href={`posts/${e.id}`}>
         <a>{e[e.type].title}</a>
