@@ -2,6 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
   }
+  // import {imgUrls} from './pages/posts/[id]'🤠
   
   module.exports = {
     nextConfig,

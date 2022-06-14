@@ -1,0 +1,55 @@
+.container {
+    width: 75vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    /* padding: 60px; */
+}
+.container>* {
+    width: 100%;
+}
+
+
+.child_page {
+    /* border: 1px solid red; */
+    font-weight: bold;
+    padding: 10px;
+    box-shadow: 1px 1px 5px -1px;
+    margin: 10px;
+    filter: opacity(75%);
+    color: black;
+    border-radius:  var(--border-radius);
+}
+.child_page:hover {
+    filter: opacity(100%);
+
+}
+.child_page:active {
+    box-shadow: inset 1px 1px 5px -1px ;
+}
+
+
+.paragraph {
+    padding: 3px 10px ;
+}
+
+/* todo para arreglar despues x.x */
+.nav {
+    background-color: black;
+    position: relative;
+    height: 90px;
+    width: 100vw;
+    display: flex;
+}
+
+.indexNotas {
+    border: 3px solid gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between ;
+    width: 70%;
+    padding: 10px 10%;
+    margin: 0 auto;
+}

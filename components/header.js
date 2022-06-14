@@ -4,6 +4,7 @@ import Button from './button'
 
 
 
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -39,16 +40,16 @@ function Nav(props) {
     return (
     <ul className={props.name}>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Inicio'/>
+        <Button href='/' className='button' text='Inicio'/>
       </li>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Contact'/>
+        <Button href='/contact' className='button' text='Contact'/>
       </li>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Blogs'/>
+        <Button href='/posts' className='button' text='Blogs'/>
       </li>
       <li>
-        <Button href='https://sass-lang.com/guide' className='button' text='Code Lab'/>
+        <Button href='/codeLab' className='button' text='Code Lab'/>
       </li>
     </ul>
     );

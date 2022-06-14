@@ -8,7 +8,6 @@ function Content({ children }){
 
     return (
         <div className={styles.content}> 
-            <h2>Algunas de las tecnologias con las que trabajo</h2>
             {children}
         </div>
     )
