@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import {posts} from '../../lib/posts'
 import {rutesIds} from '../../lib/rutesIds'
 import styles from '../../styles/Notas.module.css';

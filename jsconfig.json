@@ -4,8 +4,23 @@
     "target": "es6",
     "baseUrl": "",
     "checkJs": true,
-    "jsx": "react"
+    "jsx": "react-jsx"
+    
   },
-  "exclude": ["node_modules" , "build"],
-  "include": ["src" , "public", "pages/index.js", "pages/index.js", "pages/app.js", "components"]
+  "exclude": ["node_modules" , "build" , ".vscode" , ".next"],
+  "include": [
+    "src" , 
+    "public", 
+    "pages/index.js", 
+    "pages/_app.js", 
+    "pages/_document.js", 
+    "pages/posts/index.js", 
+    "pages/posts/[id].js", 
+    "pages/app.js", 
+    "components",
+    "lib",
+    "styles",
+    ".next"
+  
+  ]
 }
