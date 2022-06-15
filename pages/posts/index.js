@@ -10,7 +10,7 @@ import styles from '../../styles/Notas.module.css';
 
 
 export async function getStaticProps() {
-  let response = await posts('5f28676954394485a6db3de0b592a862');
+  let response = await posts('523abbcb04c541349b2e039fa24c2518');
   return {
     props: {
       posts: response,

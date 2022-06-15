@@ -116,7 +116,7 @@
 
 .indexNotas {
     border: 3px solid gray;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between ;
@@ -127,6 +127,6 @@
     transition-duration: .5s;
 }
 .indexNotas:hover {
-    width: 60%;
-    border-radius: 10px;
+    /* width: 60%; */
+    border-radius: var(--border-radius);
 }

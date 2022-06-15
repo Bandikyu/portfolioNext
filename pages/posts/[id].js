@@ -14,7 +14,7 @@ import Header from '../../components/header';
 export default function Post({ response }) {
     let bloques = [];
     let otherBlocks = [];
-    console.time('[id].js - forEach');
+    // console.time('[id].js - forEach');
     
     
     response.resChildrens.results.forEach(e => {
@@ -90,7 +90,7 @@ export default function Post({ response }) {
     });
 
     //despues podemos ver el rendimento de las tareas con forEach cambiando todo por un loop
-    console.timeEnd('[id].js - forEach')
+    // console.timeEnd('[id].js - forEach')
 
     return (
       <section className={styles.container}>
