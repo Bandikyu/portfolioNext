@@ -10,8 +10,6 @@
 .container>* {
     width: 100%;
 }
-
-
 .child_page {
     /* border: 1px solid red; */
     font-weight: bold;
@@ -29,7 +27,79 @@
 .child_page:active {
     box-shadow: inset 1px 1px 5px -1px ;
 }
+.callout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 10px auto;
+    height: auto;
+    width: 80%;
+    --width-callout: 100%;
+    --height-callout: 100%;
+    --padding-left-callout: 6px;
+    padding: calc(var(--padding-left-callout)*4 ) calc(var(--padding-left-callout)*4 );
+}
 
+.callout::before {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+.callout::after {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.747);
+    content: '';
+    width: 90%;
+    height: 70%;
+}
+.callout .text {
+    width: 90%;
+}
+.icon {
+    position: absolute;
+    margin-right: 10px;
+    z-index: 5;
+    top: 10px;
+    left: 10px;
+}
+.quote {
+    position: relative;
+    margin: 10px auto;
+    width: 90%;
+    --padding-left-quote: 6px;
+    padding: calc(var(--padding-left-quote)*2 ) calc(var(--padding-left-quote)*3 );
+    border-bottom-right-radius: calc(var(--border-radius)/1.9);
+    border-top-right-radius: calc(var(--border-radius)/1.9);
+}
+
+.quote::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    content: ' ';
+    border-bottom-right-radius: calc(var(--border-radius)/2);
+    border-top-right-radius: calc(var(--border-radius)/2);
+    width: 100%;
+    height: 100%;
+}
+.quote::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    content: ' ';
+    width: var(--padding-left-quote);
+    height: 100%;
+}
+.text {
+    position: relative;
+    z-index: 3;
+    color: rgb(34, 31, 31);
+}
 
 .paragraph {
     padding: 3px 10px ;
@@ -37,19 +107,26 @@
 
 /* todo para arreglar despues x.x */
 .nav {
-    background-color: black;
+    background-color: var(--primary-color);
     position: relative;
-    height: 90px;
+    height: 80px;
     width: 100vw;
     display: flex;
 }
 
 .indexNotas {
     border: 3px solid gray;
+    border-radius: var(--border-radius);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between ;
-    width: 70%;
+    width: 65%;
     padding: 10px 10%;
     margin: 0 auto;
+    transition-property: width border-radius;
+    transition-duration: .5s;
+}
+.indexNotas:hover {
+    width: 60%;
+    border-radius: 10px;
 }

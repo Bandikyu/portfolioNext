@@ -49,7 +49,44 @@ export default function Post({ response }) {
           <Title lvl={Number(e.type.slice(-1))} key={bloques.length}>{paragraph}</Title>
         );
       }
+      else if(e.type === 'quote') {
+        const backColor = e[e.type].color.slice(0 , e[e.type].color.indexOf('_'));
+
+        let paragraph = '';
+        e[e.type].rich_text.forEach(p => 
+          paragraph = paragraph.concat(p.plain_text)
+        );
+        bloques.push(
+          <blockquote style={{backgroundColor: backColor !== 'defaul' ? backColor : 'gray'}} key={bloques.length} className={styles[e.type]}>
+            <span className={styles.text}>{paragraph}</span>
+          </blockquote>
+        );
+      }
+      else if(e.type === 'callout') {
+        const backColor = e[e.type].color.slice(0 , e[e.type].color.indexOf('_'));
+
+        let paragraph = '';
+        e[e.type].rich_text.forEach(p => 
+          paragraph = paragraph.concat(p.plain_text)
+        );
+        bloques.push(
+          <aside style={{backgroundColor: backColor !== 'defaul' ? backColor : 'gray'}} key={bloques.length} className={styles[e.type]}>
+            <span className={styles.icon}>{e[e.type].icon.emoji}</span>
+            <span className={styles.text}>{paragraph}</span>
+          </aside>
+        );
+      }
+      else if(e.type === 'code') {
+        const codeBlocks = e[e.type].rich_text;
+        for(let x = 0 ; x<codeBlocks.length ; x++) {
+          bloques.push(<div key={bloques.length} style={{border: '1px solid' , margin: '30px 20px'}}>{codeBlocks[x].plain_text}</div>);
+          console.log(e[e.type].rich_text[x].plain_text);
+        }
+
+      }
       else otherBlocks.push(e); //aca puedo ver los bloques que no entran a la pagina para ponerles un estilo en el caso que los quiera
+      
+      
     });
 
     //despues podemos ver el rendimento de las tareas con forEach cambiando todo por un loop
