@@ -137,6 +137,7 @@
     width: 80%;
     margin: 20px auto;
     background-color: rgba(0, 0, 0, 0.596);
+    background-color: --primary-color;
     color: aliceblue;
     padding: 30px;
     overflow-y: hidden;
