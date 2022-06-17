@@ -132,3 +132,18 @@
     /* width: 60%; */
     border-radius: var(--border-radius);
 }
+
+.containerCode {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.596);
+    color: aliceblue;
+    padding: 30px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.containerCode .textCode {
+    font-family:monospace;
+    word-wrap: break-word;
+
+}
