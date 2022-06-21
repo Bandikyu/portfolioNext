@@ -47,7 +47,7 @@ export default function Post({ response }) {
         {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
         <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
-          {/* {rutas} */}
+          {process.env.VERCEL_URL}
           {bloques}
         </Content>
       </section>
