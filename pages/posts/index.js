@@ -43,7 +43,8 @@ function Pru(props) {
       <nav className={styles.nav}>
         <Header />
       </nav>
-      <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title>
+      {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
+      <Title lvl={1}>{props.posts.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
           <section className={styles.indexNotas}>
             {bloques}

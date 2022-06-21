@@ -44,7 +44,8 @@ export default function Post({ response }) {
         <nav className={styles.nav}>
           <Header />
         </nav>
-        <Title lvl={1}>{response.resContainer.child_page.title}</Title>
+        {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
+        <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
           {/* {rutas} */}
           {bloques}
@@ -65,11 +66,11 @@ export default function Post({ response }) {
     };
   } */
 export async function getStaticPaths() {
-    const resp = await fetch(`${process.env.URL_PAG}/api/cosa` , {method: 'GET'});
+    const resp = await fetch(`${process.env.URL_PAG}/api/endPoint` , {method: 'GET'});
     const respJSON = await resp.json();
     const result = respJSON.result;
-    process.env
-    const paths = result;
+    const paths = result.map(e=> ({params:{id:e}}));
+    // console.log(paths);
     return {
       paths,
       fallback: false,
@@ -78,7 +79,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   let pagIds = await posts(params.id);
-  fetch(`${process.env.URL_PAG}/api/cosa` , {method: 'GET'}).then(resp => resp.json()).then(e => console.log('api cli: %j' , e.result))
+  // fetch(`${process.env.URL_PAG}/api/endPoint` , {method: 'GET'}).then(resp => resp.json()).then(e => console.log('api cli: %j' , e.result))
   let response = pagIds;
   return {
     props: {
