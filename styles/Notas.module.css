@@ -11,6 +11,10 @@
 .container>* {
     width: 100%;
 }
+.link {
+    display: flex;
+    justify-content: center;
+}
 .child_page {
     display: inline-block;
     font-weight: bold;

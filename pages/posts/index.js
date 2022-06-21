@@ -10,8 +10,7 @@ import styles from '../../styles/Notas.module.css';
 
 
 export async function getStaticProps() {
-  // let response = await posts('5f28676954394485a6db3de0b592a862');
-  let response = await posts('523abbcb04c541349b2e039fa24c2518');
+  let response = await posts(process.env.ID_BASE_PAGE);
   return {
     props: {
       posts: response,
@@ -44,7 +43,8 @@ function Pru(props) {
       <nav className={styles.nav}>
         <Header />
       </nav>
-      <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title>
+      {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
+      <Title lvl={1}>{props.posts.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
           <section className={styles.indexNotas}>
             {bloques}
