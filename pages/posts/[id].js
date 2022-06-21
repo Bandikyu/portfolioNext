@@ -66,7 +66,8 @@ export default function Post({ response }) {
     };
   } */
 export async function getStaticPaths() {
-    const resp = await fetch(`${process.env.URL_PAG}/api/endPoint` , {method: 'GET'});
+    // const resp = await fetch(`${process.env.URL_PAG}/api/endPoint` , {method: 'GET'});
+    const resp = await fetch(`${process.env.VERCEL_URL}/api/endPoint` , {method: 'GET'});
     const respJSON = await resp.json();
     const result = respJSON.result;
     const paths = result.map(e=> ({params:{id:e}}));
