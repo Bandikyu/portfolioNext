@@ -4,7 +4,7 @@ import Content from '../../components/content';
 import Header from '../../components/header';
 import { createBlocks } from '../../lib/createBlocks';
 import {posts} from '../../lib/posts'
-// import {rutesIds} from '../../lib/rutesIds'
+import {rutesIds} from '../../lib/rutesIds'
 // import respuesta from '../../lib/recibirAPI'
 
 // export let imgUrls = ["geekland.eu"];//🤠
@@ -47,25 +47,25 @@ export default function Post({ response }) {
         {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
         <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
-          {/* {rutas} */}
+          {process.env.VERCEL_URL}
           {bloques}
         </Content>
       </section>
     );
 }
 
-/* export async function getStaticPaths() {
+export async function getStaticPaths() {
     const resp = await rutesIds();
     // console.log('respuestaAPI' + respuesta);
     // console.log('rutesIds: %j' , resp)
 
-    const paths = resp;
+    const paths = resp.map(e=> ({params:{id:e}}));
     return {
       paths,
       fallback: false,
     };
-  } */
-export async function getStaticPaths() {
+  }
+/* export async function getStaticPaths() {
     // const resp = await fetch(`${process.env.URL_PAG}/api/endPoint` , {method: 'GET'});
     const resp = await fetch(`${process.env.VERCEL_URL}/api/endPoint` , {method: 'GET'});
     const respJSON = await resp.json();
@@ -76,7 +76,7 @@ export async function getStaticPaths() {
       paths,
       fallback: false,
     };
-  }
+  }  */
 
 export async function getStaticProps({ params }) {
   let pagIds = await posts(params.id);
