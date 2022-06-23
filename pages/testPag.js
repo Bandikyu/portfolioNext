@@ -1,5 +1,5 @@
 export default function Pagina() {
-    cosa();
+    // cosa();
     return (
         <div>Pagina de prueba</div>
     )
