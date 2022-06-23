@@ -3,10 +3,13 @@ import Content from '../components/content';
 import Front from '../components/front';
 import Header from '../components/header';
 import Diagram from '../components/diagram';
+import sheetDetails from '../src/sheets/get';
 
 export async function getStaticProps() {
-  const res = await fetch('https://script.googleusercontent.com/macros/echo?user_content_key=MqHeXwqHVyI3DL9Ps5hjrAJC8a60etFDLsaztbSyAzHkLfiOyVLzIoRoqVIt822CgGNtQ6RXqqrsJz3hBeLWMk4qPFXPoOogm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDsMcJx9e6kGqetilaE8F1WkAYHfzPNw5KBLahzd7DgGDE-gQD6pr-_I5URgSZwxfaFLLC4pk8aiOQrZZUxpPc_ZwJH_ZWGVmw&lib=MiUkTyRDBd8KElwlE7hND95Tfj4_1MZ2S');
-  const posts = await res.json();
+/*   const res = await fetch('https://script.googleusercontent.com/macros/echo?user_content_key=MqHeXwqHVyI3DL9Ps5hjrAJC8a60etFDLsaztbSyAzHkLfiOyVLzIoRoqVIt822CgGNtQ6RXqqrsJz3hBeLWMk4qPFXPoOogm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnDsMcJx9e6kGqetilaE8F1WkAYHfzPNw5KBLahzd7DgGDE-gQD6pr-_I5URgSZwxfaFLLC4pk8aiOQrZZUxpPc_ZwJH_ZWGVmw&lib=MiUkTyRDBd8KElwlE7hND95Tfj4_1MZ2S');
+  const posts = await res.json(); */
+  const posts = await sheetDetails();
+  console.log(posts);
   return {
       props: {
           posts,
