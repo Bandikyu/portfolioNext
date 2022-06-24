@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 // import '../styles/index.css'; el mismo style que para las rutas dinamicas (todo de notion)
 import Title from '../../components/title';
 import Content from '../../components/content';
@@ -38,7 +39,8 @@ function Pru({response , iconos}) {
         <Link key={e.id} href={`posts/${e.id}`}>
           <a className={styles[e.type]}>
             {// @ts-ignore
-              !!icono ? ((!!icono.url) ? <img style={{width: '1.5rem'}} src={icono.url}/> : icono) : false}
+              !!icono ? ((!!icono.url) ? <Image width={25} height={25} style={{width: '1.5rem' , borderRadius:'50%'}} src={icono.url}/> : icono) : false
+            }
             {e[e.type].title}
           </a>
         </Link>

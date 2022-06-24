@@ -18,6 +18,7 @@
 .child_page {
     display: flex;
     align-items: center;
+    gap: 5px;
     font-weight: bold;
     box-shadow: 1px 1px 5px -1px;
     margin: 5px;
