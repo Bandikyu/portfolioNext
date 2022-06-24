@@ -114,6 +114,39 @@
     padding: 3px 10px ;
 }
 
+.viwPortVideo {
+    /* overflow: hidden; */
+    position: relative;
+    background-color: black;
+    --largo : 40vw;
+    width: var(--largo); 
+    height: calc(var(--largo) / 1.8); 
+    margin: 20px auto;
+}
+.viwPortVideo a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    padding: 15px;
+    font-size: .8rem;
+    word-wrap: break-word;
+    color: aliceblue;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    border-radius: 0 20px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.viwPortVideo:hover a {
+    position: absolute;
+    opacity: 1;
+    left: 0;
+
+}
+
 /* todo para arreglar despues x.x */
 .nav {
     background-color: var(--primary-color);

@@ -39,7 +39,7 @@ function Pru({response , iconos}) {
         <Link key={e.id} href={`posts/${e.id}`}>
           <a className={styles[e.type]}>
             {// @ts-ignore
-              !!icono ? ((!!icono.url) ? <Image width={25} height={25} style={{width: '1.5rem' , borderRadius:'50%'}} src={icono.url}/> : icono) : false
+              !!icono ? ((!!icono.url) ? <Image width={25} height={25} style={{borderRadius:'50%'}} src={icono.url}/> : icono) : false
             }
             {e[e.type].title}
           </a>
