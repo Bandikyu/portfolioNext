@@ -4,47 +4,56 @@ import Link from 'next/link';
 import Title from '../../components/title';
 import Content from '../../components/content';
 import Header from '../../components/header';
-import {posts} from '../../lib/posts'
 import styles from '../../styles/Notas.module.css';
+import {posts} from '../../lib/posts'
+import { icons } from '../../lib/icons'
 
+//no se porque no se porque si uso esta funcion no se generan las rutas dinamicas con staticPaths
+
+// import { createBlocks } from '../../lib/createBlocks';
+//NO VA A FUNCIONAR PORQUE LA RUTA DE LINK ES DISTINTA X_X
 
 
 export async function getStaticProps() {
   let response = await posts(process.env.ID_BASE_PAGE);
+  let iconos = await icons(response.resChildrens.results);
+
   return {
     props: {
-      posts: response,
+      response,
+      iconos
     }
   };
 }
 
-function Pru(props) {
+function Pru({response , iconos}) {
   
-  // let titulos = [];
-/*   props.posts.resChildrens.results.forEach(e => {
-    titulos.push(
-      <Link key={e.id} href={`posts/${e.id}`}>
-        <a>{e[e.type].title}</a>
-      </Link>
-      );
-  }); */
   let bloques = [];
-  props.posts.resChildrens.results.forEach(e => {
-    if(e.type === 'child_page') {
-      bloques.push(
+  response.resChildrens.results.forEach(e => {
+  if(e.type === 'child_page') {
+    let icono;
+    iconos.forEach(i => i.id === e.id ? icono = i.icon : false)
+    bloques.push(
+      <div key={bloques.length} className={styles.link}>
         <Link key={e.id} href={`posts/${e.id}`}>
-          <a className={styles[e.type]}>{e[e.type].title}</a>
+          <a className={styles[e.type]}>
+            {// @ts-ignore
+              !!icono ? ((!!icono.url) ? <img style={{width: '1.5rem'}} src={icono.url}/> : icono) : false}
+            {e[e.type].title}
+          </a>
         </Link>
-        );
-    };
-  });
+      </div>
+      );
+  }
+})
+
   return (
     <section className={styles.container}>
       <nav className={styles.nav}>
         <Header />
       </nav>
       {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
-      <Title lvl={1}>{props.posts.resContainer.properties.title.title[0].plain_text}</Title>
+      <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
         <Content>
           <section className={styles.indexNotas}>
             {bloques}

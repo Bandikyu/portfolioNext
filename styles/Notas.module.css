@@ -16,7 +16,8 @@
     justify-content: center;
 }
 .child_page {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     font-weight: bold;
     box-shadow: 1px 1px 5px -1px;
     margin: 5px;
@@ -24,6 +25,7 @@
     filter: opacity(75%);
     color: black;
     border-radius:  var(--border-radius);
+    border: 1px solid;
 }
 .child_page:hover {
     filter: opacity(100%);
