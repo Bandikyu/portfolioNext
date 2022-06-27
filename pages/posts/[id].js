@@ -20,10 +20,12 @@ export default function Post({ response , iconos }) {
         </nav>
         {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
         <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
-        <Content>
-          {process.env.VERCEL_URL}
-          {bloques}
-        </Content>
+          <Content>
+            <section className={styles.subContainer}>
+              {process.env.VERCEL_URL}
+              {bloques}
+            </section>
+          </Content>
       </section>
     );
 }

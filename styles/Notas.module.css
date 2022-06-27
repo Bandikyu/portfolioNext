@@ -6,10 +6,17 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    /* padding: 60px; */
+    --block-width: 100%;
+    --bock-margin: 0 auto 20px;
+    /* para la imagen */
+    --img-width: 40vw;
 }
 .container>* {
     width: 100%;
+}
+.subContainer {
+    width:70%;
+    margin: 0 auto;
 }
 .link {
     display: flex;
@@ -21,7 +28,7 @@
     gap: 5px;
     font-weight: bold;
     box-shadow: 1px 1px 5px -1px;
-    margin: 5px;
+    margin: var(--bock-margin);
     padding: 10px;
     filter: opacity(75%);
     color: black;
@@ -36,18 +43,16 @@
     box-shadow: inset 1px 1px 5px -1px ;
 }
 .callout {
+    --padding-left-callout: 6px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: calc(var(--padding-left-callout)*4);
     justify-content: center;
     position: relative;
-    margin: 10px auto;
+    margin: var(--bock-margin);
     height: auto;
-    width: 90%;
-    --width-callout: 100%;
-    --height-callout: 100%;
-    --padding-left-callout: 6px;
+    width: var(--block-width);
     padding: calc(var(--padding-left-callout)*4 ) 0;
 }
 
@@ -76,8 +81,8 @@
 }
 .quote {
     position: relative;
-    margin: 10px auto;
-    width: 90%;
+    margin: var(--bock-margin);
+    width: var(--block-width);
     --padding-left-quote: 6px;
     padding: calc(var(--padding-left-quote)*2 ) calc(var(--padding-left-quote)*3 );
     border-bottom-right-radius: calc(var(--border-radius)/1.9);
@@ -111,7 +116,7 @@
 }
 
 .paragraph {
-    padding: 3px 10px ;
+    padding: 3px 0 ;
 }
 
 .viwPortVideo {
@@ -121,7 +126,7 @@
     --largo : 40vw;
     width: var(--largo); 
     height: calc(var(--largo) / 1.8); 
-    margin: 20px auto;
+    margin: var(--bock-margin);
 }
 .viwPortVideo a{
     display: flex;
@@ -144,7 +149,36 @@
     position: absolute;
     opacity: 1;
     left: 0;
+}
 
+.componentImage {
+    margin: var(--bock-margin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.componentImage div {
+    position: relative;
+    width: var(--img-width); 
+    height: calc(var(--img-width) / 1.8); 
+}
+.lessComponentImage {
+    object-fit: contain;
+    width: var(--img-width); 
+    margin: var(--bock-margin);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+.lessComponentImage img {
+    object-fit: contain; 
+    width: var(--img-width); 
+    height: calc(var(--img-width) / 1.8); 
+}
+
+.list:nth-child(n) {
+    padding-left: 20px;
+    margin: var(--bock-margin);
 }
 
 /* todo para arreglar despues x.x */
@@ -174,9 +208,9 @@
 }
 
 .containerCode {
-    width: 80%;
-    margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.596);
+    width: var(--block-width);
+    margin: var(--bock-margin);
+    background-color: hsla(234, 38%, 16%, .8);
     background-color: --primary-color;
     color: aliceblue;
     padding: 30px;
@@ -187,4 +221,33 @@
     font-family:monospace;
     word-wrap: break-word;
 
+}
+
+/* MOBILE */
+@media (orientation: portrait) {
+    .container {
+        width: 95vw;
+        --img-width-m: 80vw;
+    }
+    .subContainer {
+        width: 80%;
+    }
+    .viwPortVideo {
+        --largo : 80vw;
+        width: var(--largo); 
+        height: calc(var(--largo) / 1.8); 
+        margin: var(--bock-margin);
+    }
+    .componentImage div {
+        width: var(--img-width-m); 
+        height: calc(var(--img-width-m) / 1.8); 
+    }
+    .lessComponentImage {
+        width: var(--img-width-m); 
+        margin: var(--bock-margin);
+    }
+    .lessComponentImage img {
+        width: var(--img-width-m); 
+        height: calc(var(--img-width-m) / 1.8); 
+    }
 }

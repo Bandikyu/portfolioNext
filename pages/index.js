@@ -64,9 +64,11 @@ no tienen nada que ver con esto 🥐*/
           className='Princial'>
             <Front border={this.state.scroll}/>
             <Header scroll={this.state.scroll}/>
-            <Content>
-              <Diagram jsonDiagram={this.posts}/>
-            </Content>
+            <section style={{width:'80%', margin: '0 auto'}}>
+              <Content>
+                <Diagram jsonDiagram={this.posts}/>
+              </Content>
+            </section>
           </div>
         );
     }

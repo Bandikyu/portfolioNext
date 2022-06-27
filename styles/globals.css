@@ -5,6 +5,11 @@ body {
 }
 * {
     font-family: "Century Gothic", Futura, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Open Sans',Arial,sans-serif;
+    letter-spacing: .7px;
+    word-spacing: .7px;
+    line-height: 1.5rem;
     list-style: none;
     box-sizing: border-box;
     margin: 0;
