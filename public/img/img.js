@@ -5,7 +5,7 @@ const imgs = {
     Git: 'https://db3pap006files.storage.live.com/y4mhqMgWQvGWPYnaOHErWbUqCDea-UO5Dt0uyxbyfuI4eA2wClCL2vqVpGMcK2c5GAZK37b3l9YG5J3MqwWVG_33Wi-55RNP1t7mCKUYxK_Si4MVcupTe9BkDompWy2FciqtSWFdexaWuK7PWgstCN0KV-xXgLFghhEhrdY7S25e0QPBENARW1DLnlOsi6ipVQ1?width=512&height=512&cropmode=none',
     GAS: 'https://db3pap006files.storage.live.com/y4mEvZOoIPTmkLERSyE-fmL6oecwtnytOH7-V3oLsg56d_iIkUz_IXS2HFi-TTTDN9qI_r-3citO5QA7gq8--GkoefiTu5HrM8T9IoCs8_1oafWul1w76sy3n8gWxbzifSgSup7rd6tu8XrQpPCXTllDdbehnqRi-oNICzwvEPF0hfWNw7-4lN9Uz6i2QV_4nwS?width=512&height=512&cropmode=none',
     CSS: 'https://db3pap006files.storage.live.com/y4mxCY-ge2lWFP8R3P7dPmu_cn2KHr9DeDzb7T0TrTiqdYB1711xZJEkIXfjoOUVTpS7WXxZFIuddgmxb9HxXRkIwih-sv2S62Edk0OspsOL2Aaud8G03h0O7twdwagucmMtzrMg4L9ECtBnMjHxQhx5BvfBC_nW8wyEMol_ZuqbumEKPGsN-OF3dUkG6JMQiT_?width=512&height=512&cropmode=none',
-    
+    Next: 'https://db3pap006files.storage.live.com/y4mQUiBcswAl3rz8DdjIi_94gWW5uPS9A4FYddYuk3Rl66KEEHQgBbZ_0YGTg0CpJJKfxCKs0xi50hSXQ2O2Bgm1BLHELcRHBNEU3JyNiAz21xd9TZwlrNzdIMRvG0MYqmgOtJRauYg-8RCUR2zTk2jzhICMPoBSBwRXp73OsmobC25gdjAt_FB0flzaHhV0rIj?width=256&height=281&cropmode=none',
 }
 
 export {imgs};

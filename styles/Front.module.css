@@ -11,6 +11,8 @@
     border-bottom-left-radius: 200px 100px;
     position: relative;
     transition: border-radius .5s;
+    border: 1px solid;
+    width: 100%;
 }
 
 
@@ -29,4 +31,29 @@
 .front div div {
     color: rgb(233, 233, 233);
     font-size: 1.3rem;
+}
+
+@media (orientation: portrait) {
+    .front {
+        padding: 5% 3% 10%;
+        background-size: auto 80vh;
+        border-bottom-right-radius: 100px 50px;
+        border-bottom-left-radius: 100px 50px;
+    }
+
+    .front>div {
+        width: 100%;
+    }
+    .front h1 {
+        font-size: 2rem;
+        line-height: 2rem;
+        color: beige;
+        display: inline-block;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .front div div {
+        color: rgb(233, 233, 233);
+        font-size: .7rem;
+    }
 }

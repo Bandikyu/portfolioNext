@@ -1,37 +1,41 @@
 .diagramsContainer {
+    --transition-time: .2s;
     display: grid;
-    grid-template-columns: repeat(4 , minmax(240px , 1fr));
+    grid-template-columns: repeat(auto-fit , minmax(200px , 1fr));
+    grid-template-rows: auto;
     grid-auto-flow: dense;
     justify-items: center;
     align-items: center;
-    gap: 25px;
-    height: 50vh;
-
+    gap: 100px;
+    margin: 50px;
+    /* height: 50vh; */
 }
 
 .diagram {
-    border-left: 5px solid var(--other-color);
-    border-right: 5px solid var(--other-color);
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     /* width: 30%; */
-    height: 200px;
     overflow: hidden;
+    height: 200px;
     width: 255px;
 }
 .diagram h3 {
     background-color: var(--other-color);
     font-size: 1.5rem;
-    width: 100%;
+    width: 50%;
     text-align: center;
     padding: 10px 0;
+    border-radius: 10px;
+    border: 2px solid;
 
     position: absolute;
-    left: 0;
+    bottom: 0;
+    left: 10px;
+
     z-index: 2;
-    transition:left .2s linear;
+    transition-duration: var(--transition-time);
 
 }
 .diagram ul {
@@ -40,42 +44,75 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
+
 }
 .diagram ul::-webkit-scrollbar {
     width: 0;
 }
 
 .diagram ul li {
+    transform: scale(0);
+
     padding: 5px;
     text-align: center;
     font-size: 1.2rem;
     color: transparent;
     background-color: transparent;
-    transition: .2s;
+    border-radius: 10px;
+    /* transition: .4s; */
+    transition-duration: var(--transition-time);
+
 }
 .imge {
     position: absolute;
     bottom: 0;
     height: 100%;
     display: block;
-    transition: bottom .2s linear;
-    /* border: 3px solid red; */
+    /* transition: bottom .2s linear; */
+    transition-duration: var(--transition-time);
+    transform: scale(1);
+    object-fit: cover;
+
     width: 80%;
 }
 .diagram:hover h3 {
 /*     color: transparent;
     background-color: transparent; */
-    left: -100%;
+    /* left: -100%; */
+    opacity: 0;
+    transform: scale(0);
 }
+.diagram:hover .imge{
+    /* bottom: -100% */
+    /* opacity: 0; */
+    transform: scale(0);
+    
+}
+
 .diagram:hover ul {
     width: 100%;
+
 }
 
 .diagram:hover ul li {
     background-color: var(--other-color);
     color: black;
+    transform: scale(1);
+    border: 2px solid;
+
 }
 
-.diagram:hover .imge{
-    bottom: -100%
+@media (orientation: portrait) {
+    .diagramsContainer {
+        grid-template-columns: repeat(auto-fit , minmax(140px , 1fr));
+        gap: 0 20px;
+        margin: 0 20px;
+        /* height: 50vh; */
+    }
+    
+    .diagram {
+        transform: scale(.6);
+        }
+        
+    
 }

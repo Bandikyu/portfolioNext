@@ -60,11 +60,12 @@ no tienen nada que ver con esto 🥐*/
         return (
           <div style={{
             position: 'relative',
+            width: '100vw',
           }} 
-          className='Princial'>
+          className='principal'>
             <Front border={this.state.scroll}/>
             <Header scroll={this.state.scroll}/>
-            <section style={{width:'80%', margin: '0 auto'}}>
+            <section className='tecSubContainer'>
               <Content>
                 <Diagram jsonDiagram={this.posts}/>
               </Content>
