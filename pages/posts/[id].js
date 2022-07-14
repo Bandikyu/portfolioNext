@@ -6,17 +6,21 @@ import { createBlocks } from '../../lib/createBlocks';
 import { posts } from '../../lib/posts'
 import { rutesIds } from '../../lib/rutesIds'
 import { icons } from '../../lib/icons'
+import useScroll from '../../hooks/scroll'
+
 
 // export let imgUrls = ["geekland.eu"];//🤠
 
 
 export default function Post({ response , iconos }) {
+    let scroll = useScroll();
+
     let bloques = createBlocks(response , iconos);
 
     return (
       <section className={styles.container}>
         <nav className={styles.nav}>
-          <Header />
+          <Header scroll={scroll} />
         </nav>
         {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
         <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>

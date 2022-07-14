@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 // import '../styles/index.css'; el mismo style que para las rutas dinamicas (todo de notion)
@@ -8,11 +7,7 @@ import Header from '../../components/header';
 import styles from '../../styles/Notas.module.css';
 import {posts} from '../../lib/posts'
 import { icons } from '../../lib/icons'
-
-//no se porque no se porque si uso esta funcion no se generan las rutas dinamicas con staticPaths
-
-// import { createBlocks } from '../../lib/createBlocks';
-//NO VA A FUNCIONAR PORQUE LA RUTA DE LINK ES DISTINTA X_X
+import useScroll from '../../hooks/scroll'
 
 
 export async function getStaticProps() {
@@ -27,8 +22,8 @@ export async function getStaticProps() {
   };
 }
 
-function Pru({response , iconos}) {
-  
+function IndexBlock({response , iconos}) {
+  let scroll = useScroll();
   let bloques = [];
   response.resChildrens.results.forEach(e => {
   if(e.type === 'child_page') {
@@ -52,7 +47,7 @@ function Pru({response , iconos}) {
   return (
     <section className={styles.container}>
       <nav className={styles.nav}>
-        <Header />
+        <Header scroll={scroll} />
       </nav>
       {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
       <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
@@ -66,4 +61,4 @@ function Pru({response , iconos}) {
     
 }
 
-export default Pru;
+export default IndexBlock;
