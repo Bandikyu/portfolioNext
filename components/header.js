@@ -46,11 +46,14 @@ function Nav(props) {
         <Button href='/contact' className='button' text='Contact'/>
       </li>
       <li>
-        <Button href='/posts' className='button' text='Blogs'/>
+        <Button href='/posts' className='button' text='Mis Notas'/>
       </li>
       <li>
-        <Button href='/codeLab' className='button' text='Code Lab'/>
+        <Button href='/about' className='button' text='About'/>
       </li>
+{/*       <li>
+        <Button href='/codeLab' className='button' text='Code Lab'/>
+      </li> */}
     </ul>
     );
 }

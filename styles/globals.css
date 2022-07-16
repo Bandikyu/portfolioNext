@@ -1,6 +1,6 @@
 /* CARACTERISTICAS GENERALES */
 body {
-  height: 200vh;
+  /* height: 200vh; */
   /* border: 1px solid red; */
 }
 * {
@@ -30,7 +30,6 @@ body {
   --primary-color: hsl(232, 43%, 36%);
   --primary-color-Opac: hsl(232, 43%, 25%);
   --primary-color-Lum: hsl(232, 43%, 60%);
-  /* --secondary-color: hsl(16, 59%, 60%); */
   --secondary-color: hsl(204, 59%, 60%);
   --other-color: hsl(0, 0%, 92%);
   --background-gradient: linear-gradient(0deg , var(--secondary-color) , var(--primary-color-Opac));
