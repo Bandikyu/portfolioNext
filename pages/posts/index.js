@@ -8,6 +8,8 @@ import styles from '../../styles/Notas.module.css';
 import {posts} from '../../lib/posts'
 import { icons } from '../../lib/icons'
 import useScroll from '../../hooks/scroll'
+import Front from '../../components/front';
+import Footer from '../../components/footer';
 
 
 export async function getStaticProps() {
@@ -44,20 +46,32 @@ function IndexBlock({response , iconos}) {
   }
 })
 
-  return (
+return (
+  <div>
+    <Front border={scroll}>
+      <div>
+        {/* <h1>Mis Notas</h1> */}
+        <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
+        {/*<div>
+            Este es mi portafolio en desarrollo online, espero que puedas encontrar informacion interesante sobre TIC y/o sobre mi.
+        </div> */}
+      </div>
+    </Front>
+    {/*<nav className={styles.nav}>
+      <Header scroll={scroll} />
+    </nav> */}
+    <Header scroll={scroll} />
+    {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
     <section className={styles.container}>
-      <nav className={styles.nav}>
-        <Header scroll={scroll} />
-      </nav>
-      {/* <Title lvl={1}>{props.posts.resContainer.child_page.title}</Title> */}
-      <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
-        <Content>
-          <section className={styles.indexNotas}>
-            {bloques}
-          </section>
-        </Content>
+      <Content>
+        <section className={styles.indexNotas}>
+          {bloques}
+        </section>
+      </Content>
     </section>
-  );
+    <Footer/>
+  </div>
+);
     
 }
 

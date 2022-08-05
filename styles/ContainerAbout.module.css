@@ -1,0 +1,77 @@
+.containerAbout {
+  --margin-target: 40px;
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  background-color: hsl(187, 52%, 50%);
+
+}
+
+.containerAbout input {
+  display: none;
+}
+.containerAbout label {
+  position: absolute;
+  top: calc(0px - var(--margin-target));
+  left: calc(0px - var(--margin-target));
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+  background-color: powderblue;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.containerAbout label:nth-child(2) {
+  margin-left: 0;
+}
+
+.containerAbout input:checked + label {
+  top: var(--margin-target);
+  left: var(--margin-target);
+  z-index: 1;
+  background-color: hsl(187, 52%, 95%);
+  box-shadow: 0 0 10px -5px;
+}
+
+
+
+@media (orientation: portrait) {
+
+
+  .containerAbout {
+    width: 90%;
+  }
+  .containerAbout label {
+    --margin-target-m: 15px;
+    top: var(--margin-target-m);
+    left: var(--margin-target-m);
+    padding: 50px 50px 50px 10px;
+
+  }
+  .containerAbout input:checked + label {
+    top: calc( 0px - var(--margin-target-m));
+    left: calc( 0px - var(--margin-target-m));
+  }
+  .containerAbout label h2 {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 100px;
+    writing-mode: vertical-rl;
+    width: auto;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+    color: transparent;
+    background-color: hsl(187, 52%, 30%);
+    background-clip: text;
+  }
+
+}

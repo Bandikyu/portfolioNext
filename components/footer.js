@@ -11,8 +11,9 @@ export default function Footer() {
             <section className={styles.details}>
                 <ul>
                     <li>Sitio desarrollado en React.</li>
-                    <li>SEO mejorado y obviado un poco el backend con Next.</li>
-                    <li>Datos obtenidos mediante JSON desde la API oficial de Notion y Google Sheets (para mantenerlos actualizados).</li>
+                    <li>SEO y rendimiento general mejorado con Next.</li>
+                    <li>Obviando un poco el backend con Vercel.</li>
+                    <li>Datos obtenidos mediante JSON desde la API oficial de Notion y Google Sheets.</li>
                     <li>Por mas detalles consultar About Site en About</li>
                 </ul>
             </section>

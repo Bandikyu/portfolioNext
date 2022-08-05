@@ -8,7 +8,6 @@
     align-items: center;
     gap: 100px;
     margin: 50px;
-    /* height: 50vh; */
 }
 
 .diagram {
@@ -16,8 +15,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    /* width: 30%; */
-    overflow: hidden;
+    overflow: visible;
     height: 200px;
     width: 255px;
 }
@@ -39,11 +37,15 @@
 
 }
 .diagram ul {
-    height: 100%;
+    scrollbar-width: none;
+    height: 0%;
     overflow: auto;
     display: flex;
     gap: 10px;
+    padding: 0 10px;
+    width: 100%;
     flex-direction: column;
+    transition: height var(--transition-time);
 
 }
 .diagram ul::-webkit-scrollbar {
@@ -51,55 +53,51 @@
 }
 
 .diagram ul li {
-    transform: scale(0);
 
     padding: 5px;
     text-align: center;
     font-size: 1.2rem;
-    color: transparent;
-    background-color: transparent;
-    border-radius: 10px;
-    /* transition: .4s; */
-    transition-duration: var(--transition-time);
+    background-color: var(--other-color);
+    box-shadow: 0 0 10px -3px;
+    border-radius: 10px ;
 
 }
 .imge {
+
     position: absolute;
-    bottom: 0;
+    top: 0;
+    left: 25px;
     height: 100%;
     display: block;
-    /* transition: bottom .2s linear; */
     transition-duration: var(--transition-time);
     transform: scale(1);
     object-fit: cover;
 
     width: 80%;
 }
+
 .diagram:hover h3 {
-/*     color: transparent;
-    background-color: transparent; */
-    /* left: -100%; */
     opacity: 0;
     transform: scale(0);
 }
 .diagram:hover .imge{
-    /* bottom: -100% */
-    /* opacity: 0; */
-    transform: scale(0);
-    
+    height: 40px;
+    width: 40px;
+    top: -20px;
+    left: -20px;
 }
 
 .diagram:hover ul {
-    width: 100%;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    height: 100%;
 
 }
 
 .diagram:hover ul li {
     background-color: var(--other-color);
+    box-shadow: 0 0 10px -3px;
     color: black;
-    transform: scale(1);
-    border: 2px solid;
-
 }
 
 @media (orientation: portrait) {
@@ -113,6 +111,5 @@
     .diagram {
         transform: scale(.6);
         }
-        
-    
+
 }

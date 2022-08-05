@@ -24,10 +24,16 @@ function App(props) {
   return (
     <div style={{
       position: 'relative',
-      // width: '100vw',
     }} 
     className='principal'>
-      <Front border={scroll}/>
+      <Front border={scroll}>
+        <div>
+          <h1>Hola soy Bruno, un gusto!!!</h1>
+          <div>
+              Este es mi portafolio en desarrollo online, espero que puedas encontrar informacion interesante sobre TIC y/o sobre mi.
+          </div>
+        </div>
+      </Front>
       <Header scroll={scroll}/>
       <section className='tecSubContainer'>
         {/* <h1 style={{margin:'30px 0 -20px', textAlign: 'center' , fontSize:'1.4rem' , lineHeight:'1.5rem'}}>Lenguajes y tecnologías que he usado</h1> */}

@@ -7,6 +7,8 @@ import { posts } from '../../lib/posts'
 import { rutesIds } from '../../lib/rutesIds'
 import { icons } from '../../lib/icons'
 import useScroll from '../../hooks/scroll'
+import Footer from '../../components/footer';
+import Front from '../../components/front';
 
 
 // export let imgUrls = ["geekland.eu"];//🤠
@@ -18,19 +20,26 @@ export default function Post({ response , iconos }) {
     let bloques = createBlocks(response , iconos);
 
     return (
-      <section className={styles.container}>
-        <nav className={styles.nav}>
+      <div>
+        {/*<nav className={styles.nav}>
           <Header scroll={scroll} />
-        </nav>
-        {/* <Title lvl={1}>{response.resContainer.child_page.title}</Title> */}
-        <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
-          <Content>
-            <section className={styles.subContainer}>
-              {process.env.VERCEL_URL}
-              {bloques}
-            </section>
-          </Content>
-      </section>
+        </nav> */}
+        <Front border={scroll}>
+          <div>
+            <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>
+          </div>
+        </Front>
+        <Header scroll={scroll} />
+        <section className={styles.container}>
+            <Content>
+              <section className={styles.subContainer}>
+                {process.env.VERCEL_URL}
+                {bloques}
+              </section>
+            </Content>
+        </section>
+        <Footer/>
+      </div>
     );
 }
 

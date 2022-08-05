@@ -1,23 +1,25 @@
 .front {
-    padding-top: 4%;
-    padding-left: 4%;
+    padding-top: 6%;
     padding-bottom: 6%;
 
     background-image: var(--background-gradient);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: auto 40vh;
+    background-size: auto 50vh;
     border-bottom-right-radius: 200px 100px;
     border-bottom-left-radius: 200px 100px;
     position: relative;
     transition: border-radius .5s;
-    /* border: 1px solid; */
-    width: 100%;
+
 }
 
 
 .front>div {
-    width: 50%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 1px solid white; */
+
 }
 
 

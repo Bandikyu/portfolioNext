@@ -182,29 +182,28 @@
 }
 
 /* todo para arreglar despues x.x */
-.nav {
+/* .nav {
     background-color: var(--primary-color);
     position: relative;
     height: 80px;
     width: 100vw;
     display: flex;
-}
+} */
 
 .indexNotas {
-    border: 3px solid gray;
+    /* border: 1px solid; */
+    /* border: 3px solid gray; */
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between ;
-    width: 65%;
-    padding: 10px 10%;
+    flex-direction: row;
+    /* justify-content: space-between ; */
+    width: 50%;
+    gap: 0 20px;
+    padding: 10px;
     margin: 0 auto;
-    transition-property: width border-radius;
-    transition-duration: .5s;
-}
-.indexNotas:hover {
-    /* width: 60%; */
-    border-radius: var(--border-radius);
+    /* transition-property: width border-radius; */
+    /* transition-duration: .5s; */
 }
 
 .containerCode {
@@ -225,6 +224,10 @@
 
 /* MOBILE */
 @media (orientation: portrait) {
+    .indexNotas {
+        width: 100%;
+    }
+
     .container {
         width: 95vw;
         --img-width-m: 80vw;
