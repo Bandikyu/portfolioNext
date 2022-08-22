@@ -1,4 +1,9 @@
 /* CARACTERISTICAS GENERALES */
+body {
+  /* provisorio porque la animacion de la mano hace que se genere y desaparezca el scrollbar 
+  en las paginas donde no tengo la barra visible*/
+  overflow-y: scroll;
+}
 
 * {
     font-family: "Century Gothic", Futura, sans-serif;
@@ -28,7 +33,9 @@
   --primary-color-Opac: hsl(232, 43%, 25%);
   --primary-color-Lum: hsl(232, 43%, 60%);
   --secondary-color: hsl(204, 59%, 60%);
+  --secondary-color-Lum: hsl(204, 59%, 95%);
   --other-color: hsl(0, 0%, 92%);
+  --other-color-2: hsl(32, 84%, 83%);
   --background-gradient: linear-gradient(0deg , var(--secondary-color) , var(--primary-color-Opac));
 
   /* bordes */

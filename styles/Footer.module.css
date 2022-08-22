@@ -141,12 +141,16 @@
 .github > div > * {
     position: absolute;
 }
-.github > div > div {
+
+/* Editado por ahora hasta que pueda colocar el repo en div
+con la api de github 👑 */
+/* .github > div > div { */
+.github > div > a {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     background-color: antiquewhite;
-    background-image: url('../public/img/github.png');
+    background-image: url('../public/img/contact/github.svg');
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(1);
@@ -166,12 +170,12 @@
     border-radius: 20px;
 }
 
-.github:hover div > iframe {
+/* 👑 .github:hover div > iframe {
     transform: scale(1);
 }
 .github:hover div > div {
     transform: scale(0);
-}
+} */
 
 @media (orientation: portrait) {
 

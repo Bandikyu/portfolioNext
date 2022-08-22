@@ -20,9 +20,9 @@ export default function Footer() {
             <div className={styles.divider}></div>
             <section className={styles.github}>
                 <div>
-                    {/* <div><a href='https://github.com/Bandikyu/portfolioNext'></a></div> */}
-                    <div></div>
-                    <iframe src='https://github.com/Bandikyu/portfolioNext'></iframe>
+                    <a target={"_blank"} href='https://github.com/Bandikyu/portfolioNext'></a>
+                    {/* <div></div> */}
+                    {/* <iframe src='https://github.com/Bandikyu/portfolioNext'></iframe> */}
                 </div>
             </section>
             
