@@ -1,6 +1,5 @@
 import Front from '../components/front';
 import Header from '../components/header';
-import Title from '../components/title';
 import Content from '../components/content';
 import ContactTarget from '../components/contact_target';
 import Footer from '../components/footer';
@@ -35,7 +34,8 @@ export default function Contact() {
                         <ContactTarget title='Discord' img='/img/contact/discord.svg' url='https://discordapp.com/users/Lorren#0883'/>
                         <ContactTarget title='Telegram' img='/img/contact/telegram.svg' url='https://t.me/brunoripoll'/>
                         <ContactTarget title='GitHub' img='/img/contact/github.svg' url='https://github.com/Bandikyu'/>
-                        <ContactTarget title='Gmail' img='/img/contact/gmail.svg'/>
+                        <ContactTarget title='LinkedIn' img='/img/contact/linkedin.svg' url='https://linkedin.com/in/bruno-ripoll-ramos'/>
+                        <ContactTarget mail={true} title='Gmail' img='/img/contact/gmail.svg'/>
                     </section>
                 </Content>
             </section>

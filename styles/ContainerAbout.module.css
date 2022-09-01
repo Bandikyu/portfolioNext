@@ -1,7 +1,9 @@
 .containerAbout {
   --margin-target: 40px;
   position: relative;
-  height: 600px;
+  /* tengo que ver como sacar el valor fijo del height a algo flexible segun el contenido x.x 
+  y que cuando tenga el checked se expanda y contraiga a algo fijo cuando no este checked*/
+  height: 800px;
   width: 80%;
   margin: 100px auto;
   display: flex;
