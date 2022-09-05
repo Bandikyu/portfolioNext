@@ -35,8 +35,8 @@ export default function ContactTarget(props) {
             {props.mail ? (
                     <form onSubmit={submitHandler}  id='form' className={styles.form}>
                         <input onClick={handleClick} value='✖' type='button'/>
-                        <input placeholder='Email' type='mail' id='email' name='email'/>
-                        <textarea id='message' name='message'></textarea>
+                        <input required placeholder='Email' type='mail' id='email' name='email'/>
+                        <textarea required id='message' name='message'></textarea>
                         <input  value='Enviar' type='submit'/>
                     </form>
             ) : false}
@@ -44,6 +44,7 @@ export default function ContactTarget(props) {
                 <Image alt={props.title} src={props.img} layout='fill'/>
             </div>
             <a onClick={handleClick} href={props.url} target='_blank'></a>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </div>
     );
 }
