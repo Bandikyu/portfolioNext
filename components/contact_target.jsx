@@ -13,11 +13,15 @@ export default function ContactTarget(props) {
     }
     function submitHandler(event) {
         event.preventDefault();
+        setSubmit('Enviando...');
+
         let email = event.target.email.value;
         let message = event.target.message.value;
+        let date = new Date().toLocaleDateString('es-es', {year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric"}) ;
+
         fetch('/api/sheetsApi', {
             method: 'POST',
-            body: JSON.stringify({email , message}),
+            body: JSON.stringify({date , email , message}),
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -27,11 +31,11 @@ export default function ContactTarget(props) {
             setTimeout(()=> {
                 setStateStyle(styles.targetContact);
                 setSubmit('Enviar');
-            } , 1500) 
+            } , 2500) 
         }).catch(()=> {
             setSubmit('Fallo en el Envio')
             setTimeout(()=> {
-                setSubmit('Enviar');
+                setSubmit('Reintentar');
             } , 1500) 
         });
     }

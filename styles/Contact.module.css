@@ -126,6 +126,10 @@
     background-color: rgb(255, 161, 73);
     transition: background-color 1s;
 }
+.targetContactExpanded [value='Enviando...'] {
+    background-color: rgb(255, 248, 148);
+    transition: background-color .5s;
+}
 
 .targetContactExpanded [type='submit']:hover {
     box-shadow: 2px 2px 10px -5px;

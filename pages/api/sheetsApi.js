@@ -2,7 +2,7 @@ import { google } from "googleapis";
 
 async function handler(req, res) {
   if (req.method === "POST") {
-    const { email, message } = req.body;
+    const {date , email, message } = req.body;
 
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -26,10 +26,10 @@ async function handler(req, res) {
     const response = await sheets.spreadsheets.values.append({
       //   spreadsheetId: process.env.DATABASE_ID,
       spreadsheetId: "1RkQX8bttqtM--D5hsHmJly4eSpxRxREE-Yq7bNzq64E",
-      range: "Mensajes!A2:B",
+      range: "Mensajes!A2:C",
       valueInputOption: "RAW",
       requestBody: {
-        values: [[email, message]],
+        values: [[date, email, message]],
       },
     });
     res.status(201).end();
