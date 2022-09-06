@@ -3,12 +3,10 @@ import { google } from "googleapis";
 async function handler(req, res) {
   if (req.method === "POST") {
     const { email, message } = req.body;
-    console.log("server:" , email + " " + message);
 
     const auth = new google.auth.GoogleAuth({
       credentials: {
         private_key: process.env.PRIVATE_KEY,
-        // private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
         client_email: process.env.CLIENT_EMAIL,
         client_id: process.env.CLIENT_ID,
       },
@@ -34,10 +32,8 @@ async function handler(req, res) {
         values: [[email, message]],
       },
     });
-    // const data = req.body;
-    // res.status(201).json({ message: 'It works!'});
-    // res.status(201).end();
-    res.redirect(307, "../contact");
+    res.status(201).end();
+    // res.redirect(307, "../contact");
   }
 }
 

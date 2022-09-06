@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function ContactTarget(props) {
     const [stateStyle , setStateStyle] = useState(styles.targetContact)
-    const [open , setOpen] = useState(false)
+    const [submit , setSubmit] = useState('Enviar')
 
     function handleClick() {
         if(props.mail && stateStyle === styles.targetContact){
@@ -12,7 +12,7 @@ export default function ContactTarget(props) {
         } else {setStateStyle(styles.targetContact)}
     }
     function submitHandler(event) {
-
+        event.preventDefault();
         let email = event.target.email.value;
         let message = event.target.message.value;
         fetch('/api/sheetsApi', {
@@ -21,30 +21,36 @@ export default function ContactTarget(props) {
             headers: {
                 'Content-Type': 'application/json',
             },
+        }).then(()=> {
+            event.target.reset();
+            setSubmit('Enviado ✓')
+            setTimeout(()=> {
+                setStateStyle(styles.targetContact);
+                setSubmit('Enviar');
+            } , 1500) 
+        }).catch(()=> {
+            setSubmit('Fallo en el Envio')
+            setTimeout(()=> {
+                setSubmit('Enviar');
+            } , 1500) 
         });
-        event.preventDefault();
-        alert('Mensaje Enviado');
-        event.target.reset();
-        
-        setStateStyle(styles.targetContact);
     }
 
     return (
         <div className={stateStyle}>
             <h2>{props.title}</h2>
             {props.mail ? (
-                    <form onSubmit={submitHandler}  id='form' className={styles.form}>
-                        <input onClick={handleClick} value='✖' type='button'/>
-                        <input required placeholder='Email' type='mail' id='email' name='email'/>
-                        <textarea required id='message' name='message'></textarea>
-                        <input  value='Enviar' type='submit'/>
-                    </form>
+                <form onSubmit={submitHandler}  id='form' className={styles.form}>
+                    <input onClick={handleClick} value='✖' type='button'/>
+                    <input required placeholder='Ingrese su Email' type='mail' id='email' name='email'/>
+                    <textarea required placeholder='Mensaje...' id='message' name='message'></textarea>
+                    <input id='submit' value={submit} type='submit'/>
+                </form>
             ) : false}
             <div className={styles.tgContactImg}>
                 <Image alt={props.title} src={props.img} layout='fill'/>
             </div>
             <a onClick={handleClick} href={props.url} target='_blank'></a>
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         </div>
     );
 }

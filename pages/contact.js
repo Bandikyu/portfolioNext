@@ -6,16 +6,6 @@ import Footer from '../components/footer';
 import useScroll from '../hooks/scroll';
 
 
-
-/* export async function getServerSideProps( res ) {
-
-    console.log(res);
-    return {
-        props: { message : "Nuevo2" }
-    }
-
-} */
-
 export default function Contact() {
     let scroll = useScroll();
     return (

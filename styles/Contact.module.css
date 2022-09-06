@@ -14,6 +14,26 @@
 
 }
 
+/* .targetContact aside {
+    display: none;
+}
+.targetContactExpanded aside {
+    height: 80%;
+    width: 100%;
+}
+.targetContact dialog {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background-color: green;
+    width: 50%;
+    height: 50%;
+    color: azure;
+    border: none;
+    text-align: center;
+    border-radius: 50%;
+} */
+
 .targetContact h2 { 
     z-index: 2;
     font-size: 2.8rem;
@@ -98,6 +118,15 @@
 .targetContactExpanded .form [value='✖']:hover {
     background-color: red;
 }
+.targetContactExpanded [value='Enviado ✓'] {
+    background-color: rgb(23, 255, 178);
+    transition: background-color 1s;
+}
+.targetContactExpanded [value='Fallo en el Envio'] {
+    background-color: rgb(255, 161, 73);
+    transition: background-color 1s;
+}
+
 .targetContactExpanded [type='submit']:hover {
     box-shadow: 2px 2px 10px -5px;
 }
