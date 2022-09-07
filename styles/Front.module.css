@@ -1,82 +1,76 @@
 .front {
-    padding-top: 6%;
-    padding-bottom: 6%;
+  padding-top: 6%;
+  padding-bottom: 6%;
 
-    background-image: var(--background-gradient);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto 50vh;
-    border-bottom-right-radius: 200px 100px;
-    border-bottom-left-radius: 200px 100px;
-    position: relative;
-    transition: border-radius .5s;
-
+  background-image: var(--background-gradient);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto 50vh;
+  border-bottom-right-radius: 200px 100px;
+  border-bottom-left-radius: 200px 100px;
+  position: relative;
+  transition: border-radius 0.5s;
 }
 
-
-.front>div {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    /* border: 1px solid white; */
-
+.front > div {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
-
 
 .front h1 {
-    font-size: 4rem;
-    line-height: 4rem;
-    color: beige;
-    display: inline-block;
-    margin-bottom: 20px;
+  font-size: 4rem;
+  line-height: 4rem;
+  color: beige;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 .front div div {
-    color: rgb(233, 233, 233);
-    font-size: 1.3rem;
+  color: rgb(233, 233, 233);
+  font-size: 1.3rem;
 }
 
 .front .icon {
-    /* border: 5px solid; */
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url(../public/icon.svg);
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../public/icon.svg);
 }
 .front .icon p {
-    position: absolute;
-    top: 38px;
-    right: -95px;
-    font-size: 2.5rem;
-    color: rgb(255, 255, 255);
-    width: 160px;
+  position: absolute;
+  top: 38px;
+  right: -95px;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  width: 160px;
 }
 
 @media (orientation: portrait) {
-    .front {
-        padding: 5% 3% 10%;
-        background-size: auto 80vh;
-        border-bottom-right-radius: 100px 50px;
-        border-bottom-left-radius: 100px 50px;
-    }
+  .front {
+    padding: 5% 3% 10%;
+    background-size: auto 80vh;
+    border-bottom-right-radius: 100px 50px;
+    border-bottom-left-radius: 100px 50px;
+  }
 
-    .front>div {
-        width: 100%;
-    }
-    .front h1 {
-        font-size: 2rem;
-        line-height: 2rem;
-        color: beige;
-        display: inline-block;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .front div div {
-        color: rgb(233, 233, 233);
-        font-size: .85rem;
-    }
-    .front .icon {
-        display: none;
-    }
+  .front > div {
+    width: 100%;
+  }
+  .front h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+    color: beige;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .front div div {
+    color: rgb(233, 233, 233);
+    font-size: 0.85rem;
+  }
+  .front .icon {
+    display: none;
+  }
 }

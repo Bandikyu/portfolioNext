@@ -35,7 +35,7 @@ export default function Contact() {
                         <ContactTarget title='Telegram' img='/img/contact/telegram.svg' url='https://t.me/brunoripoll'/>
                         <ContactTarget title='GitHub' img='/img/contact/github.svg' url='https://github.com/Bandikyu'/>
                         <ContactTarget title='LinkedIn' img='/img/contact/linkedin.svg' url='https://linkedin.com/in/bruno-ripoll-ramos'/>
-                        <ContactTarget mail={true} title='Gmail' img='/img/contact/gmail.svg'/>
+                        <ContactTarget mail={true} title='Email' img='/img/contact/gmail.svg'/>
                     </section>
                 </Content>
             </section>

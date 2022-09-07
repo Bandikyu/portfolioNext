@@ -1,173 +1,171 @@
 .footer {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: repeat(5 , auto);
-    grid-auto-flow: dense;
-    background: linear-gradient(0deg, var(--primary-color-Opac) 0, var(--secondary-color) 60%);
-    background-attachment:fixed;
-    background-repeat: no-repeat;
-    background-size: auto 60vh;
-    background-position: bottom;
-    background-origin: border-box;
-    color: rgb(39, 39, 39);
-    width: 100%;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(5, auto);
+  grid-auto-flow: dense;
+  background: linear-gradient(
+    0deg,
+    var(--primary-color-Opac) 0,
+    var(--secondary-color) 60%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto 60vh;
+  background-position: bottom;
+  background-origin: border-box;
+  color: rgb(39, 39, 39);
+  width: 100%;
 }
 .footer .divider {
-    display: block;
-    width: 1px;
-    background: linear-gradient(0deg, transparent 20%, var(--secondary-color) 50%, transparent 80%);
-    height: 100%;
-    border-radius: 50%;
+  display: block;
+  width: 1px;
+  background: linear-gradient(
+    0deg,
+    transparent 20%,
+    var(--secondary-color) 50%,
+    transparent 80%
+  );
+  height: 100%;
+  border-radius: 50%;
 }
-
 
 /* CONTACT */
 @keyframes down {
-    from {bottom: 0 ;right: 0} to {bottom: -2px ; right: -2px}
+  from {
+    bottom: 0;
+    right: 0;
+  }
+  to {
+    bottom: -2px;
+    right: -2px;
+  }
 }
 .contact {
-    align-self: center;
-    justify-self: center;
-    position: relative;
+  align-self: center;
+  justify-self: center;
+  position: relative;
 }
 .contact h3 {
-    position: relative;
-    color: aliceblue;
-    font-size: 1.5rem;
-    padding: 30px 40px;
-    background-color: var(--secondary-color);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: none;
-    transition: .2s;
+  position: relative;
+  color: aliceblue;
+  font-size: 1.5rem;
+  padding: 30px 40px;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: 0.2s;
 }
 
-/* queda pendiente hacer un keyframe reutilizable de reflect effect */
-/* @keyframes reflect {
-    from { 
-        height: 100px;
-        background: linear-gradient(0deg, transparent 30%, rgba(235,235,235,1) 46%, transparent 70%);
-        position: absolute;
-        top: -100%;
-        left: -20%;
-        width: 200%;
-        transition: .5s;
-        transform: rotate(20deg);
-    }
-    to {
-        top: 240%;
-        left: -100%;
-    }
-} */
 .contact h3::after {
-    content: '';
-    height: 100px;
-    background: linear-gradient(0deg, transparent 30%, rgba(235,235,235,1) 46%, transparent 70%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 200%;
-    transition: .3s linear;
-    transform: rotate(20deg) translateX(0) translateY(-100%);
-
+  content: "";
+  height: 100px;
+  background: linear-gradient(
+    0deg,
+    transparent 30%,
+    rgba(235, 235, 235, 1) 46%,
+    transparent 70%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  transition: 0.3s linear;
+  transform: rotate(20deg) translateX(0) translateY(-100%);
 }
 .contact:hover h3::after {
-    transform: translateX(-100%) translateY(100%);
+  transform: translateX(-100%) translateY(100%);
 }
 
 .contact .img {
-    width: 40px;
-    height: 40px;
-    background-image: url('../public/img/click.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: scale(1) rotate(-30deg) ;
-    animation: down .2s ease alternate infinite;
-    transition: .2s;
+  width: 40px;
+  height: 40px;
+  background-image: url("../public/img/click.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: scale(1) rotate(-30deg);
+  animation: down 0.2s ease alternate infinite;
+  transition: 0.2s;
 }
 .contact:hover h3 {
-    box-shadow: 0px 0px 20px -7px ;
+  box-shadow: 0px 0px 20px -7px;
 }
-.contact:hover .img{
-    transform: scale(0) rotate(-30deg) ;
-
+.contact:hover .img {
+  transform: scale(0) rotate(-30deg);
 }
 .footer:hover .img {
-    animation: none;
+  animation: none;
 }
-
 
 /* DETALLES */
 .details {
-    padding: 20px 0;  
-    align-self: center;
-    justify-self: start;
-
+  padding: 20px 0;
+  align-self: center;
+  justify-self: start;
 }
-.details ul{
-    display: grid;
-    grid-template-columns: minmax(200px , 1fr);
-    grid-template-rows: repeat(4 , minmax(40px , auto));
-    gap: 5px;
-    justify-items: start;
-    align-items: center;
+.details ul {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  grid-template-rows: repeat(4, minmax(40px, auto));
+  gap: 5px;
+  justify-items: start;
+  align-items: center;
 }
 .details ul > * {
-    background-color: var(--other-color);
-    padding: 10px;
-    border-radius: 10px;
-    line-height: 1.2rem;
-    border: 2px solid;
-
+  background-color: var(--other-color);
+  padding: 10px;
+  border-radius: 10px;
+  line-height: 1.2rem;
+  border: 2px solid;
 }
 
 /* GITHUB */
 .github {
-    align-self: center;
-    justify-self: center;
-    width: 300px;
-    height: 300px;
+  align-self: center;
+  justify-self: center;
+  width: 300px;
+  height: 300px;
 }
 .github > div {
-    height: 300px;
-    position: relative;
-    display: flex;
-    justify-content: center ;
-    align-items: center;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .github > div > * {
-    position: absolute;
+  position: absolute;
 }
 
 /* Editado por ahora hasta que pueda colocar el repo en div
 con la api de github 👑 */
 /* .github > div > div { */
 .github > div > a {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: antiquewhite;
-    background-image: url('../public/img/contact/github.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    transform: scale(1);
-    z-index: 1;
-    transition: .2s;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  background-image: url("../public/img/contact/github.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1);
+  z-index: 1;
+  transition: 0.2s;
 }
 .github > div > div a {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 .github > div > iframe {
-    width: 100%;
-    height: 300px;
-    transform: scale(0);
-    transition: .2s;
-    border: transparent;
-    border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  transform: scale(0);
+  transition: 0.2s;
+  border: transparent;
+  border-radius: 20px;
 }
 
 /* 👑 .github:hover div > iframe {
@@ -178,47 +176,44 @@ con la api de github 👑 */
 } */
 
 @media (orientation: portrait) {
+  .footer {
+    grid-template-columns: repeat(1, auto);
+    border: 1px solid;
+    background-size: auto 200vh;
+    padding-top: 70px;
+  }
+  .footer .divider {
+    display: none;
+  }
 
-    .footer {
-        grid-template-columns: repeat(1 , auto);
-        border: 1px solid;
-        background-size: auto 200vh;
-        padding-top: 70px;
-    }
-    .footer .divider {
-        display: none;
-    }
-
-    .contact h3 {
-        font-size: 1.2rem;
-        padding: 20px 30px;
-    }
-    .contact .img {
-        display: none;
-    }
-    .details {
-        padding: 60px 20px 0;  
-        font-size: .9rem;
-    }
-    .details ul{
-        gap: 10px;
-    }
-    .details ul > * {
-        padding: 7px;
-        border-radius: 10px;
-        line-height: 1rem;
-        border: 2px solid;
-    }
-    .github {
-        align-self: center;
-        justify-self: center;
-        width: 300px;
-        height: 300px;
-    }
-    .github > div > div {
-        width: 100px;
-        height: 100px;
-    }
-    
-
+  .contact h3 {
+    font-size: 1.2rem;
+    padding: 20px 30px;
+  }
+  .contact .img {
+    display: none;
+  }
+  .details {
+    padding: 60px 20px 0;
+    font-size: 0.9rem;
+  }
+  .details ul {
+    gap: 10px;
+  }
+  .details ul > * {
+    padding: 7px;
+    border-radius: 10px;
+    line-height: 1rem;
+    border: 2px solid;
+  }
+  .github {
+    align-self: center;
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+  }
+  .github > div > div {
+    width: 100px;
+    height: 100px;
+  }
 }

@@ -19,8 +19,11 @@
 }
 .containerAbout label {
   position: absolute;
-  top: calc(0px - var(--margin-target));
-  left: calc(0px - var(--margin-target));
+  transform: translate3d(
+    calc(0px - var(--margin-target)),
+    calc(0px - var(--margin-target)),
+    0
+  );
 
   display: flex;
   flex-direction: column;
@@ -37,32 +40,28 @@
 }
 
 .containerAbout input:checked + label {
-  top: var(--margin-target);
-  left: var(--margin-target);
+  transform: translate3d(var(--margin-target), var(--margin-target), 0);
   z-index: 1;
   background-color: hsl(187, 52%, 95%);
   box-shadow: 0 0 10px -5px;
 }
 
-
-
 @media (orientation: portrait) {
-
-
   .containerAbout {
     width: 90%;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
   .containerAbout label {
     --margin-target-m: 15px;
-    top: var(--margin-target-m);
-    left: var(--margin-target-m);
+    transform: translate3d(var(--margin-target-m), var(--margin-target-m), 0);
     padding: 50px 50px 50px 10px;
-
   }
   .containerAbout input:checked + label {
-    top: calc( 0px - var(--margin-target-m));
-    left: calc( 0px - var(--margin-target-m));
+    transform: translate3d(
+      calc(0px - var(--margin-target-m)),
+      calc(0px - var(--margin-target-m)),
+      0
+    );
   }
   .containerAbout label h2 {
     position: absolute;
@@ -71,10 +70,9 @@
     top: 100px;
     writing-mode: vertical-rl;
     width: auto;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
     color: transparent;
     background-color: hsl(187, 52%, 30%);
     background-clip: text;
   }
-
 }

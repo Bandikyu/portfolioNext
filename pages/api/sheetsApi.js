@@ -2,7 +2,7 @@ import { google } from "googleapis";
 
 async function handler(req, res) {
   if (req.method === "POST") {
-    const {date , email, message } = req.body;
+    const { date, email, message } = req.body;
 
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -33,7 +33,6 @@ async function handler(req, res) {
       },
     });
     res.status(201).end();
-    // res.redirect(307, "../contact");
   }
 }
 
