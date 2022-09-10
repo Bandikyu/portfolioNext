@@ -9,6 +9,7 @@ import useScroll from '../hooks/scroll'
 
 export async function getStaticProps() {
   const posts = await sheetDetails();
+
   return {
       props: {
           posts,
