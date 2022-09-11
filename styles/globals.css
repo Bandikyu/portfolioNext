@@ -3,6 +3,9 @@ body {
   /* provisorio porque la animacion de la mano hace que se genere y desaparezca el scrollbar 
   en las paginas donde no tengo la barra visible*/
   overflow-y: scroll;
+  min-height: 100vh;
+  max-height: auto;
+  /* border: 1px solid red; */
 }
 
 * {

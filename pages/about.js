@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 import ContainerAbout from '../components/containerabout';
 import useScroll from '../hooks/scroll';
 import Link from 'next/link';
-
+import HeadTags from "../components/headTags";
 
 
 export default function About() {
@@ -16,6 +16,7 @@ export default function About() {
             position: 'relative',
         }}
             className='principal'>
+            <HeadTags title='About' description='Sobre mi y este sitio 😀'/>
             <Front border={scroll}>
                 <div>
                     <h1>About</h1>

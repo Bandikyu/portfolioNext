@@ -9,6 +9,7 @@ import { icons } from '../../lib/icons'
 import useScroll from '../../hooks/scroll'
 import Footer from '../../components/footer';
 import Front from '../../components/front';
+import HeadTags from '../../components/headTags';
 
 
 // export let imgUrls = ["geekland.eu"];//🤠
@@ -24,6 +25,8 @@ export default function Post({ response , iconos }) {
         {/*<nav className={styles.nav}>
           <Header scroll={scroll} />
         </nav> */}
+        <HeadTags title={response.resContainer.properties.title.title[0].plain_text} description='Algunos de mis apuntes escritos en Notion.'/>
+
         <Front border={scroll}>
           <div>
             <Title lvl={1}>{response.resContainer.properties.title.title[0].plain_text}</Title>

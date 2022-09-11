@@ -1,52 +1,56 @@
-import Front from '../components/front';
-import Title from '../components/title';
-import Header from '../components/header';
-import Diagram from '../components/diagram';
-import Content from '../components/content';
-import Footer from '../components/footer';
-import sheetDetails from '../src/sheets/get';
-import useScroll from '../hooks/scroll'
+import Front from "../components/front";
+import Title from "../components/title";
+import Header from "../components/header";
+import Diagram from "../components/diagram";
+import Content from "../components/content";
+import Footer from "../components/footer";
+import sheetDetails from "../src/sheets/get";
+import useScroll from "../hooks/scroll";
+import HeadTags from "../components/headTags";
 
 export async function getStaticProps() {
   const posts = await sheetDetails();
 
   return {
-      props: {
-          posts,
-      },
-      revalidate: 10,
-  }
+    props: {
+      posts,
+    },
+    revalidate: 10,
+  };
 }
 
 function App(props) {
-  let posts = props.posts
+  let posts = props.posts;
   let scroll = useScroll();
 
+  let descripcion = "Esto es un portafolio en desarrollo online, espero que puedasencontrar informacion util sobre TIC y/o sobre mi."
+
   return (
-    <div style={{
-      position: 'relative',
-    }} 
-    className='principal'>
+    <div
+      style={{
+        position: "relative",
+      }}
+      className="principal"
+    >
+      <HeadTags title="Mi Portafolio" description={descripcion}/>
       <Front border={scroll}>
         <div>
-          <h1>Hola soy Bruno, un gusto!!!</h1>
+          <h1>Saludos, me llamo Bruno</h1>
           <div>
-              Este es mi portafolio en desarrollo online, espero que puedas encontrar informacion interesante sobre TIC y/o sobre mi.
+            {descripcion}
           </div>
         </div>
       </Front>
-      <Header scroll={scroll}/>
-      <section className='tecSubContainer'>
-        {/* <h1 style={{margin:'30px 0 -20px', textAlign: 'center' , fontSize:'1.4rem' , lineHeight:'1.5rem'}}>Lenguajes y tecnologías que he usado</h1> */}
+      <Header scroll={scroll} />
+      <section className="tecSubContainer">
         <Title lvl={2}>Lenguajes y tecnologías que he usado</Title>
         <Content>
-          <Diagram jsonDiagram={posts}/>
+          <Diagram jsonDiagram={posts} />
         </Content>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
-
 }
 
 export default App;

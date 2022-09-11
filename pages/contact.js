@@ -4,6 +4,8 @@ import Content from '../components/content';
 import ContactTarget from '../components/contact_target';
 import Footer from '../components/footer';
 import useScroll from '../hooks/scroll';
+import HeadTags from "../components/headTags";
+
 
 
 export default function Contact() {
@@ -13,10 +15,12 @@ export default function Contact() {
             position: 'relative',
         }}
             className='principal'>
+            <HeadTags title='Contact' description='Por cualquier duda o consulta contacte 📧'/>
+
             <Front border={scroll}>
                 <div>
                     <h1>Contact</h1>
-                    <div>Por cualquier duda o consulta comuniquense sin miedo 📧</div>
+                    <div>Por cualquier duda o consulta contacte 📧</div>
                 </div>
             </Front>
             <Header scroll={scroll} />
