@@ -1,3 +1,22 @@
+/* NORMALIZACION */
+dialog {
+  /* display: block; */
+  position: static;
+  inset-inline-start: auto;
+  inset-inline-end: auto;
+  /* width: auto; */
+  /* height: auto; */
+  /* background-color: none; */
+  color: transparent;
+  /* margin: none; */
+  border-width: none;
+  border-style: none;
+  border-color: none;
+  border-image: none;
+  padding: 0;
+}
+
+
 /* CARACTERISTICAS GENERALES */
 body {
   /* provisorio porque la animacion de la mano hace que se genere y desaparezca el scrollbar 
@@ -20,6 +39,7 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
+
   }
 
 .tecSubContainer {
@@ -28,6 +48,8 @@ body {
 }
 /* VARIABLES */
 :root {
+  font-size: 11px;
+
   /* tiempo */
   --time-transition: 0.1s;
 
@@ -44,6 +66,12 @@ body {
   /* bordes */
   --border-primary: 10px;
   --border-radius: 40px;
+}
+
+@media ( (min-width: 770px) ) {
+  :root {
+    font-size: 12px;
+  }
 }
 
 @media (orientation: portrait) {

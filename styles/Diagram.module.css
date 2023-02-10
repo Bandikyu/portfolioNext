@@ -94,14 +94,16 @@
   color: black;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 770px) {
   .diagramsContainer {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 0 20px;
-    margin: 0 20px;
+    margin: 0;
+    font-size: 6rem;
   }
 
   .diagram {
+    font-weight: bold;
     transform: scale3d(0.6, 0.6, 0.6);
   }
 }

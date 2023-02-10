@@ -23,7 +23,7 @@ function App(props) {
   let posts = props.posts;
   let scroll = useScroll();
 
-  let descripcion = "Esto es un portafolio en desarrollo online, espero que puedasencontrar informacion util sobre TIC y/o sobre mi."
+  let descripcion = "Esto es un portafolio en desarrollo online, espero que puedas encontrar informacion util sobre TIC y/o sobre mi."
 
   return (
     <div

@@ -2,6 +2,13 @@
 
 const domains = ["db3pap006files.storage.live.com", "geekland.eu"];
 const nextConfig = {
+  webpack: function (config, context) {
+    config.watchOptions = {
+        poll: 1000,
+        aggregateTimeout: 300,
+    };
+    return config;
+  },
   reactStrictMode: true,
   images: {
     domains: domains,

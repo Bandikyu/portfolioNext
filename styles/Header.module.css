@@ -2,20 +2,23 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 15px 0;
-  font-size: 1.3rem;
-  border-radius: 0 0 0 var(--border-primary);
+  padding: 8px 0;
+  font-size: 1.2rem;
+  border-radius: 0 0 0 25px;
   background-color: transparent;
   transition-duration: var(--time-transition);
   transition-property: all;
   z-index: 10;
 }
+.header .close {
+  display: none;
+}
 
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 30px;
+  gap: 10px;
+  padding: 0 10px;
 }
 
 /* Al scrollear */
@@ -39,49 +42,115 @@
   padding: 10px;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 770px) {
   .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: fixed;
     top: auto;
-    bottom: 0;
-    right: 0;
+    bottom: 10px;
+    right: 10px;
     padding: 0;
-    font-size: 0.8rem;
-    border-radius: 0 0 0 var(--border-primary);
-    background-color: var(--primary-color);
-    transition-duration: 0;
-    transition-property: none;
-    transition-timing-function: none;
+    border-radius: 5px;
+    /* border-radius: 0 0 0 var(--border-primary); */
+    background-color: var(--secondary-color);
+    /* background-color: red; */
     z-index: 10;
+    
+    width: 50px;
+    height: 50px;
+
+    transition: width .3s , height .3s;
   }
+  .header::after , .header::before {
+    transition: width .1s , top .1s , bottom .1s;
+  }
+  .header::before {
+    content: '';
+    background-color: black;
+    height: 5px;
+    width: 80%;
+    position: absolute;
+    top: 12px;
+    border-radius: 10px;
+  }
+  .header::after {
+    content: '';
+    background-color: black;
+    height: 5px;
+    width: 80%;
+    position: absolute;
+    bottom: 12px;
+    border-radius: 10px;
+  }
+
+
 
   .nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    padding: 0;
-  }
-
-  .header_srll {
-    z-index: 10;
-    position: fixed;
-    right: 0;
-    top: auto;
-    bottom: 0;
-    font-size: 1rem;
-    padding: 0;
-    border-radius: var(--border-primary);
-    background-color: var(--primary-color);
-    border-radius: 0 0 0 var(--border-primary);
-  }
-
-  .nav_srll {
-    display: flex;
-    font-size: 0.8rem;
-
-    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-direction: column;
     align-items: center;
-    gap: 0;
+    justify-content: center;
+    gap: 0px;
     padding: 0;
+    font-size: 1rem;
+
+    height: 5.4px;
+    width: 80%;
+    background-color: black;
+  }
+  .nav * {
+    display: none;
+  }
+
+
+  /* Open burgerMenu */
+
+  [open].header {
+    padding: 0;    
+    width: 150px;
+    height: 200px;
+    background-color: transparent;
+  }
+  [open].header::before {
+    height: 5px;
+    width: 100%;
+    top: 0;
+  }
+  [open].header::after {
+    height: 5px;
+    width: 100%;
+    bottom: 0;
+  }
+  [open].header .nav {
+    gap: 8px;
+    font-size: 1.1rem;
+    height: 100%;
+    width: 95%;
+    background-color: var(--secondary-color);
+  }
+  [open].header .nav * {
+    display: block;
+  }
+
+  [open].header .close {
+    display: block;
+    color: white;
+    font-size: 34px;
+    background-color: black;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+    font-family: cursive;
+    cursor:default;
+
+    position: absolute;
+    bottom: 7px;
+    right: 0;
   }
 }

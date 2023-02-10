@@ -6,7 +6,7 @@ export default function useScroll() {
 
   function coordY() {
     if (throttleTimer === true) {
-      return setScroll(window.scrollY);
+      return setScroll(Math.round(window.scrollY));
     } else return;
   }
 

@@ -1,40 +1,40 @@
-import React from 'react';
+import { useState , useEffect , useRef } from 'react';
 import styles from '../styles/Header.module.css';
 import Button from './button'
 
 
-
-
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    //ARREGLOS: tengo que buscar una manera de que cuando F5 a la pagina, this.headerSize no vuelva a cambiar
-    //porque el scroll se mantiene, entonces los size de algunos elementos cambia.
-    //solucion torpe: que cada vez que actualice la pagina vuelva al top 🐜
-    this.headerSize = 20;
-    this.handleClick = this.handleClick.bind(this);
-  }
-  componentDidMount() {
-    let header = document.getElementById('header');
-    this.headerSize = header.clientHeight;
-    //console.log(this.headerSize); //🐜  
-  }
-/*   componentWillUnmount() {
-    this.headerSize = 100;
-    console.log(this.headerSize); //🐜  
-  } */
-
-  handleClick(e) {
-    //console.log(e.target);
-  }
-  render() {    
-      return (
-        <div id='header' className={this.props.scroll>=this.headerSize ? styles.header_srll : styles.header}>
-          <Nav name={this.props.scroll>=this.headerSize ? styles.nav_srll : styles.nav}/>
-        </div>
-      );
+function Header(props) {
+  let headerSize = 30;
+  const header = useRef();
+  const [dialogOpen , setDialogOpen] = useState(false);
+  const [widWindow , setWidWindow] = useState(0)
+  
+  useEffect( () => {
+    setWidWindow(window.screen.width);
+    // @ts-ignore
+    headerSize = header.current.clientHeight; // Este no cambia tendria que usar un estado? 🛑
+    window.screen.width > 770 ? setDialogOpen(true) : false;
+  })
+  function handleClickOpen() {
+    if(!dialogOpen) {
+      setDialogOpen(true);
     }
+  } 
+  function handleClickClose() {
+    if(dialogOpen) {
+      setDialogOpen(false);
+    }
+  } 
+
+  
+  return (
+    <dialog ref={header} onClick={handleClickOpen} open={dialogOpen} className={(props.scroll >= headerSize && widWindow > 770) ? styles.header_srll : styles.header}>
+      { widWindow > 770 ? false : <div onClick={handleClickClose} className={styles.close}>x</div> }
+      <Nav name={(props.scroll >= headerSize && widWindow > 770) ? styles.nav_srll : styles.nav}/>
+    </dialog>
+  );
 }
+
 
 function Nav(props) {
     return (
@@ -51,7 +51,7 @@ function Nav(props) {
       <li>
         <Button href='/about' className='button' text='About'/>
       </li>
-{/*       <li>
+      {/* <li>
         <Button href='/codeLab' className='button' text='Code Lab'/>
       </li> */}
     </ul>
